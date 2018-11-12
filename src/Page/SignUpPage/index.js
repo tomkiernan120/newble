@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom'
-import { auth } from '../../firebase'
+import { auth, db } from '../../firebase'
 
 import * as routes from '../../Constants/routes'
 
@@ -40,8 +40,6 @@ class SignUpForm extends React.Component {
     } = this.state
 
     const { history } = this.props
-
-    console.log( auth )
 
     auth.doCreateUserWithEmailAndPassword( email, passwordOne )
       .then( authUser => {

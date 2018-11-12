@@ -5,7 +5,10 @@ import { firebase } from '../firebase'
 import * as routes from '../Constants/routes'
 import Navigation from './Navigation'
 
-import { LandingPage, SignUpPage, SignIn } from '../Page'
+import { LandingPage, SignUpPage, SignIn, Home } from '../Page'
+
+import 'normalize.css'
+import '../index.css'
 
 class App extends Component {
   constructor(props) {
@@ -29,10 +32,11 @@ class App extends Component {
      <Router>
       <div>
         <Navigation authUser={this.state.authUser} />
-
+        
         <Route exact path={routes.LANDING} component={LandingPage} />
         <Route exact path={routes.SIGN_UP} component={SignUpPage} />
         <Route exact path={routes.SIGN_IN} component={SignIn} />
+        <Route exact path={routes.HOME} component={Home} />
       </div>
      </Router>
     );
