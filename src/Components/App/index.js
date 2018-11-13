@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import { firebase } from '../firebase'
+import { firebase } from '../../firebase'
 
-import * as routes from '../Constants/routes'
-import Navigation from './Navigation'
+import * as routes from '../../Constants/routes'
+import Navigation from '../Navigation'
 
-import { LandingPage, SignUpPage, SignIn, Home } from '../Page'
+import { LandingPage, SignUpPage, SignIn, Home } from '../../Page'
 
 import 'normalize.css'
-import '../index.css'
+import '../../index.scss'
 
 class App extends Component {
   constructor(props) {

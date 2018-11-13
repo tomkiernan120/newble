@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import * as routes from "../Constants/routes";
+import * as routes from "../../Constants/routes";
 
-import AuthUserContext from "./AuthUserContext";
-import SignOutButton from "./SignOut";
+import AuthUserContext from "../AuthUserContext";
+import SignOutButton from "../SignOut";
 
 const Navigation = () => {
   return (
