@@ -7,7 +7,6 @@ import * as routes from '../../Constants/routes'
 console.log( auth )
 const SignUpPage = ({ history }) =>
   <div>
-    <h1>SignUp</h1>
     <SignUpForm history={history} />
   </div>
 

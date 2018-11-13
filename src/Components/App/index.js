@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { firebase } from '../../firebase'
+import Helmet from 'react-helmet'
 
 import * as routes from '../../Constants/routes'
 import Navigation from '../Navigation'
+import Footer from '../Footer'
 
 import { LandingPage, SignUpPage, SignIn, Home } from '../../Page'
 
@@ -28,15 +30,29 @@ class App extends Component {
   }
 
   render() {
+    const { authUser } = this.state;
     return (
      <Router>
       <div>
-        <Navigation authUser={this.state.authUser} />
-        
+        <Helmet>
+            <meta charSet="utf-8" />
+            <title>Newble</title>
+        </Helmet>
+        <header>
+          <div className='inner'>
+            <h1 className='logo'>newble</h1>
+          </div>
+        </header>
+        <section className='navigation'>
+          <div className='inner'>
+            <Navigation value={authUser} />
+          </div>
+        </section>
         <Route exact path={routes.LANDING} component={LandingPage} />
         <Route exact path={routes.SIGN_UP} component={SignUpPage} />
         <Route exact path={routes.SIGN_IN} component={SignIn} />
         <Route exact path={routes.HOME} component={Home} />
+        <Footer />
       </div>
      </Router>
     );
