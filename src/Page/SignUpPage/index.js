@@ -4,7 +4,6 @@ import { auth, db } from '../../firebase'
 
 import * as routes from '../../Constants/routes'
 
-console.log( auth )
 const SignUpPage = ({ history }) =>
   <div>
     <SignUpForm history={history} />

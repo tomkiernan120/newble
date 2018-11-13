@@ -1,7 +1,7 @@
 import React from 'react'
 
 import AuthUserContext from '../AuthUserContext'
-import * as firebase from '../../firebase'
+import { firebase } from '../../firebase'
 
 
 const withAuthentication = ( Component ) => {

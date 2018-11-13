@@ -6,6 +6,8 @@ import Helmet from 'react-helmet'
 import * as routes from '../../Constants/routes'
 import Navigation from '../Navigation'
 import Footer from '../Footer'
+import withAuthentication from '../withAuthentication';
+
 
 import { LandingPage, SignUpPage, SignIn, Home } from '../../Page'
 
@@ -59,4 +61,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withAuthentication(App);

@@ -9,10 +9,11 @@ import SignOutButton from "../SignOut";
 const Navigation = () => {
   return (
     <AuthUserContext.Consumer>
-      {authUser => authUser ? <NavigationAuth /> : <NavigationNonAuth />}
+      {authUser => authUser ? <NavigationAuth /> : <NavigationNonAuth /> }
     </AuthUserContext.Consumer>
   )
 };
+
 
 const NavigationAuth = () => (
   <ul>
