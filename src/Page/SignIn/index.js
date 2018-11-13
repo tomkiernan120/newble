@@ -79,7 +79,7 @@ export class SignInForm extends React.Component {
         <button disabled={isInvalid} type="submit">
           Sign In
         </button>
-
+        <div className='clear'></div>
         {error && <p>{error.message}</p>}
       </form>
     );
