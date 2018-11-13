@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom'
-import { auth, db } from '../../firebase'
+import { auth } from '../../firebase'
 
 import * as routes from '../../Constants/routes'
 
@@ -32,7 +32,6 @@ class SignUpForm extends React.Component {
   onSubmit = ( event ) => {
     event.preventDefault();
     const {
-      username,
       email,
       passwordOne
     } = this.state
