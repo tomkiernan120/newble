@@ -31,17 +31,20 @@ class HomePage extends React.Component {
   componentDidMount() {
     firebase.auth.onAuthStateChanged(( user ) => {
       if( user ){
-        const snippets = db.getSnippets( user.uid )
-        let newState = []
-        snippets.once('value', (snapshot) => {
-          let newState = []
-          let items = snapshot.val();
-          for( let item in items ){
-            newState.push( items[item] );
-          }
-        })
-        this.setState({
-          snippets: newState
+          const itemref = db.getSnippets(user.uid)
+          itemsRef.on('value', (snapshot) => {
+            let items = snapshot.val();
+            let newState = [];
+            for (let item in items) {
+              newState.push({
+                id: item,
+                title: items[item].title,
+                user: items[item].user
+              });
+            }
+            this.setState({
+              items: newState
+            });
         })
       }
     })
@@ -80,6 +83,7 @@ class HomePage extends React.Component {
 
   render () {
     const { snippets } = this.state
+    console.log( snippets )
     return (
       <main>
         <div className='inner'>
