@@ -60,6 +60,7 @@ export class SignInForm extends React.Component {
     const isInvalid = password === "" || email === "";
     return (
       <form onSubmit={this.onSubmit}>
+        {error && <p>{error.message}</p>}
         <input
           value={email}
           onChange={event =>
@@ -80,7 +81,6 @@ export class SignInForm extends React.Component {
           Sign In
         </button>
         <div className='clear'></div>
-        {error && <p>{error.message}</p>}
       </form>
     );
   }
