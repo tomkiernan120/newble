@@ -9,10 +9,11 @@ export const doCreateUser = (id, username, email) =>
 export const onceGetUsers = () => 
   db.ref('users').once('value')
 
-export const doAddSnippet = (id,snippet,author,time) => 
-  db.ref(`snippets/`).set({
-    id,
+export const doAddSnippet = ( userid, snippet, time) => 
+  db.ref(`${userid}/snippets`).push().set({
     snippet,
-    author,
     time
   })
+
+export const getSnippets = (userid) =>
+    db.ref(`${userid}/snippets`)

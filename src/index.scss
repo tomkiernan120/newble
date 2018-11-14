@@ -106,6 +106,18 @@ main body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+input,  select, textarea {
+    width: 100%;
+    float: left;
+    margin-bottom: 12px;
+    padding: 2%;
+}
+
+textarea{
+  resize: vertical;
+}
+
 .signin {
   position: absolute;
   transform: translate(-50%, -50%);
@@ -121,4 +133,40 @@ main body {
     padding: 8px;
     border: 0px;
   }
+}
+
+
+[data-toggle="false"]{
+  display: none;
+}
+
+[data-toggle="true"]{
+  display:block;
+  position: fixed;
+  width:100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+}
+
+[data-toggle] .overlay{
+  background: rgba( 0, 0, 0, 0.5 );
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left:0;
+}
+
+[data-toggle] .modal{
+  position: fixed;
+  width: 40%;
+  height: auto;
+  background: #fff;
+  box-sizing:border-box;
+  padding: 2%;
+  border-radius: 6px;
+  top: 50%;
+  left: 50%;
+  transform: translate( -50%, -50% )
 }
