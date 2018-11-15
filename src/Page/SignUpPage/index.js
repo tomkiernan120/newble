@@ -5,9 +5,11 @@ import { auth } from '../../firebase'
 import * as routes from '../../Constants/routes'
 
 const SignUpPage = ({ history }) =>
-  <div>
-    <SignUpForm history={history} />
-  </div>
+  <main>
+    <div className='inner'>
+      <SignUpForm history={history} />
+    </div>
+  </main>
 
 const INITIAL_STATE = {
   username: '',
