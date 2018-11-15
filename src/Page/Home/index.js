@@ -1,6 +1,6 @@
 import React from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-import ReactAce from 'react-ace-editor';
+import MonacoEditor from 'react-monaco-editor';
 import WithAuthorization from "../../Components/WithAuthorization";
 
 import { db, firebase } from "../../firebase";
@@ -39,9 +39,6 @@ class HomePage extends React.Component {
               snippet: items[item].snippet,
               time: items[item].time
             });
-
-            console.log( newState );
-
             this.setState({
               snippets: newState
             });
@@ -102,7 +99,7 @@ class HomePage extends React.Component {
 
   render() {
     const { snippets } = this.state;
-    const options = {lineNumbers:true, tabSize:2, readOnly:true};
+    const options = {lineNumbers:true, tabSize:2, readOnly:false};
     return (
       <main>
         <div className="inner">
@@ -127,7 +124,7 @@ class HomePage extends React.Component {
                       </p>
                       <p>{e.time}</p>
                     </div>
-                    <ReactAce value={e.snippet} options={options} />
+                    <MonacoEditor height={200} value={e.snippet} options={options} />
                     <CopyToClipboard text={e.snippet}>
                       <button>Copy</button>
                     </CopyToClipboard>
@@ -167,11 +164,7 @@ class Modal extends React.Component {
               value={this.props.title}
             />
             <label>Snippet</label>
-            <textarea
-              onChange={this.props.handleChange}
-              name="snippet"
-              value={this.props.snippet}
-            />
+            <MonacoEditor height={200} value={this.props.snippet} onChange={this.props.handleChange} />
             <button onClick={this.props.addSnippet}>Add Snippet</button>
           </div>
         </div>
