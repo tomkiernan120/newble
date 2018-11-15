@@ -2,7 +2,7 @@ import React from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import CodeMirror from 'react-codemirror';
 
-import withAuthorization from "../../Components/withAuthorization";
+import WithAuthorization from "../../Components/WithAuthorization";
 
 import { db, firebase } from "../../firebase";
 
@@ -182,4 +182,4 @@ class Modal extends React.Component {
 
 const authCondition = authUser => !!authUser;
 
-export default withAuthorization(authCondition)(HomePage);
+export default WithAuthorization(authCondition)(HomePage);
