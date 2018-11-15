@@ -16,3 +16,4 @@ script:
   - CI=false yarn install
   - CI=false yarn test
   - CI=false yarn build
+  - CI=false yarn deploy

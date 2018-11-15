@@ -1,12 +1,9 @@
 import React from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-import { Controller as CodeMirror } from 'react-codemirror2';
-
+import ReactAce from 'react-ace-editor';
 import WithAuthorization from "../../Components/WithAuthorization";
 
 import { db, firebase } from "../../firebase";
-
-import "../../../node_modules/codemirror/lib/codemirror.css"
 
 const INITIAL_STATE = {
   toggleShow: false,
@@ -130,7 +127,7 @@ class HomePage extends React.Component {
                       </p>
                       <p>{e.time}</p>
                     </div>
-                    <CodeMirror value={e.snippet} options={options} />
+                    <ReactAce value={e.snippet} options={options} />
                     <CopyToClipboard text={e.snippet}>
                       <button>Copy</button>
                     </CopyToClipboard>
