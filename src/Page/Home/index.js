@@ -1,6 +1,6 @@
 import React from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-import CodeMirror from 'react-codemirror';
+import { Controller as CodeMirror } from 'react-codemirror2';
 
 import WithAuthorization from "../../Components/WithAuthorization";
 
@@ -42,6 +42,9 @@ class HomePage extends React.Component {
               snippet: items[item].snippet,
               time: items[item].time
             });
+
+            console.log( newState );
+
             this.setState({
               snippets: newState
             });
