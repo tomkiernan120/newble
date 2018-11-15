@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js build
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js add react-monaco-editor
 
 PATH: 
   /Users/thomaskiernan/google-cloud-sdk/bin:/Users/thomaskiernan/.composer/vendor/bin:/Users/thomaskiernan/.npm-packages/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/thomaskiernan/google-cloud-sdk/bin:/Users/thomaskiernan/.composer/vendor/bin:/Users/thomaskiernan/.npm-packages/bin
@@ -10793,16 +10793,5 @@ Lockfile:
       yargs-parser "^5.0.0"
 
 Trace: 
-  Error: Command failed.
-  Exit code: 1
-  Command: sh
-  Arguments: -c react-scripts build
-  Directory: /Users/thomaskiernan/Documents/GitHub/newble
-  Output:
-  
-      at ProcessTermError.MessageError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:186:110)
-      at new ProcessTermError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:226:113)
-      at ChildProcess.<anonymous> (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:30281:17)
-      at ChildProcess.emit (events.js:182:13)
-      at maybeClose (internal/child_process.js:962:16)
-      at Process.ChildProcess._handle.onexit (internal/child_process.js:251:5)
+  Error: https://registry.yarnpkg.com/monaco-editor/-/monaco-editor-0.15.4.tgz: unexpected end of file
+      at Zlib.zlibOnError [as onerror] (zlib.js:154:17)
