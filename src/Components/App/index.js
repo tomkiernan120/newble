@@ -9,7 +9,7 @@ import Footer from '../Footer'
 import withAuthentication from '../withAuthentication';
 
 
-import { LandingPage, SignUpPage, SignIn, Home } from '../../Page'
+import { LandingPage, SignUpPage, SignIn, Home, Account } from '../../Page'
 
 import 'normalize.css'
 import '../../index.scss'
@@ -50,6 +50,7 @@ class App extends Component {
               <Navigation value={authUser} />
             </div>
           </section>
+          <Route exact path={routes.ACCOUNT} component={Account} />
           <Route exact path={routes.LANDING} component={LandingPage} />
           <Route exact path={routes.SIGN_UP} component={SignUpPage} />
           <Route exact path={routes.SIGN_IN} component={SignIn} />
