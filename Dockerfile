@@ -1,18 +1,16 @@
-# base image
-FROM node:9.6.1
+# Use Node.js version 10
+FROM mhart/alpine-node:10
 
-# set working directory
-RUN mkdir /usr/src/app
-WORKDIR /usr/src/app
+# Set the working directory
+WORKDIR /usr/src
 
-# add `/usr/src/app/node_modules/.bin` to $PATH
-ENV PATH /usr/src/app/node_modules/.bin:$PATH
+# Copy package manager files to the working directory and run install
+COPY package.json yarn.lock ./
+RUN yarn install
 
-# install and cache app dependencies
-COPY package.json /usr/src/app/package.json
-# could turn off silent if errors are occurring
-RUN npm install --silent 
-RUN npm install react-scripts@1.1.1 -g --silent
+# Copy all files to the working directory
+COPY . .
 
-# start app
-CMD ["npm", "start"]
+# Build the app and move the resulting build to the `/public` directory
+RUN yarn build
+RUN mv ./build /public
