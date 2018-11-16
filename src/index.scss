@@ -148,7 +148,7 @@ label {
   width: 100%;
   float: left;
   margin-bottom: 12px;
-  padding: 2%;
+  padding: 1%;
 }
 
 label{
@@ -173,7 +173,7 @@ button {
   float: left;
   margin-bottom: 12px;
   border: 0;
-  padding: 2%;
+  padding: 1%;
   color: #fff;
   border-radius: 6px;
 }
@@ -249,4 +249,15 @@ button {
       padding: 1%;
     }
   }
+}
+
+form{
+  width: 100%;
+  margin-bottom: 12px;
+  background: #fff;
+  border-radius: 4px;
+  background: #fff;
+  padding: 5%;
+  height: auto;
+  float: left;
 }
