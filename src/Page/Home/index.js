@@ -1,12 +1,9 @@
 import React from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-import CodeMirror from 'react-codemirror';
-
-import withAuthorization from "../../Components/withAuthorization";
+import MonacoEditor from 'react-monaco-editor';
+import WithAuthorization from "../../Components/WithAuthorization";
 
 import { db, firebase } from "../../firebase";
-
-import "../../../node_modules/codemirror/lib/codemirror.css"
 
 const INITIAL_STATE = {
   toggleShow: false,
@@ -102,7 +99,7 @@ class HomePage extends React.Component {
 
   render() {
     const { snippets } = this.state;
-    const options = {lineNumbers:true, tabSize:2, readOnly:true};
+    const options = {lineNumbers:true, tabSize:2, readOnly:false};
     return (
       <main>
         <div className="inner">
@@ -127,7 +124,7 @@ class HomePage extends React.Component {
                       </p>
                       <p>{e.time}</p>
                     </div>
-                    <CodeMirror value={e.snippet} options={options} />
+                    <MonacoEditor height={200} value={e.snippet} options={options} />
                     <CopyToClipboard text={e.snippet}>
                       <button>Copy</button>
                     </CopyToClipboard>
@@ -167,11 +164,7 @@ class Modal extends React.Component {
               value={this.props.title}
             />
             <label>Snippet</label>
-            <textarea
-              onChange={this.props.handleChange}
-              name="snippet"
-              value={this.props.snippet}
-            />
+            <MonacoEditor height={200} value={this.props.snippet} onChange={this.props.handleChange} />
             <button onClick={this.props.addSnippet}>Add Snippet</button>
           </div>
         </div>
@@ -182,4 +175,4 @@ class Modal extends React.Component {
 
 const authCondition = authUser => !!authUser;
 
-export default withAuthorization(authCondition)(HomePage);
+export default WithAuthorization(authCondition)(HomePage);

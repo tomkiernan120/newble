@@ -19,11 +19,13 @@ export default class Account extends React.Component {
 
   componentDidMount(){
     firebase.auth.onAuthStateChanged( user => {
-      if( user.displayName ){
-        this.setState( {name: user.displayName });
-      }      
-      if( user.email ){
-        this.setState( {email: user.email });
+      if( user ){
+        if( user.displayName ){
+          this.setState( {name: user.displayName });
+        }      
+        if( user.email ){
+          this.setState( {email: user.email });
+        }
       }
     })
   }

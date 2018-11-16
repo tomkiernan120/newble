@@ -3,14 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@firebase/app-types": "^0.3.2",
     "firebase": "^5.5.8",
     "node-sass": "^4.10.0",
     "normalize.css": "^8.0.1",
     "react": "^16.6.1",
-    "react-codemirror": "^1.0.0",
+    "react-ace-editor": "^0.0.3",
     "react-copy-to-clipboard": "^5.0.1",
     "react-dom": "^16.6.1",
     "react-helmet": "^5.2.0",
+    "react-monaco-editor": "^0.21.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.1",
     "react-tooltip": "^3.9.0",
@@ -20,7 +22,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "npm run clean && npm run build && now"
   },
   "eslintConfig": {
     "extends": "react-app"
