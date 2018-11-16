@@ -1,1 +1,15 @@
-{}
+{
+  "type": "static",
+  "version": 2,
+  "static": {
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  },
+  "github": {
+    "enabled": false
+  }
+}
