@@ -6,7 +6,7 @@ import Helmet from 'react-helmet'
 import * as routes from '../../Constants/routes'
 import Navigation from '../Navigation'
 import Footer from '../Footer'
-import {WithAuthentication} from '../';
+import WithAuthentication from '../WithAuthentication';
 
 
 import { LandingPage, SignUpPage, SignIn, Home, Account } from '../../Page'

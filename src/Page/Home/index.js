@@ -2,11 +2,13 @@ import React from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import CodeMirror from 'react-codemirror';
 
-import { WithAuthorization } from "../../Components/";
+import WithAuthorization from "../../Components/WithAuthorization";
+
 
 import { db, firebase } from "../../firebase";
 
 import "../../../node_modules/codemirror/lib/codemirror.css"
+console.log( WithAuthorization )
 
 const INITIAL_STATE = {
   toggleShow: false,
