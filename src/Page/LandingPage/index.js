@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from 'react-router-dom';
 import Particles from "react-particles-js";
 
 export default class LandingPage extends React.Component {
@@ -34,6 +34,7 @@ export default class LandingPage extends React.Component {
           >
             Super Simple code snippet library
           </h1>
+          <p style={{textAlign:"center"}}><Link to="/signin">Login</Link> to manage your snippets, or <Link to="/signup">Sign up</Link></p>
         </div>
       </section>
     );

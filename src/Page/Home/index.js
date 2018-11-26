@@ -21,7 +21,7 @@ require('codemirror/mode/sass/sass');
 const INITIAL_STATE = {
   toggleShow: false,
   title: "",
-  snippet: "",
+  snippet: "\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
   errors: null,
   type: '',
   types: ['javascript','xml','css','go','html', 'php','htmlmixed','sass'],
@@ -77,7 +77,8 @@ class HomePage extends React.Component {
     this.setState({ type: '' });
   }
 
-  snippetChange(value){
+  snippetChange(editor, value){
+    console.log( value );
     this.setState({ snippet: value })
   }
 
