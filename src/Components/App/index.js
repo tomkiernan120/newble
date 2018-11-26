@@ -55,6 +55,7 @@ class App extends Component {
           <Route exact path={routes.SIGN_UP} component={SignUpPage} />
           <Route exact path={routes.SIGN_IN} component={SignIn} />
           <Route exact path={routes.HOME} component={Home} />
+          <Footer />
         </div>
       </Router>
     )

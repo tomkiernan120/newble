@@ -54,6 +54,7 @@ class HomePage extends React.Component {
             newState.push({
               id: item,
               title: items[item].title,
+              type: items[item].type,
               snippet: items[item].snippet,
               time: items[item].time
             });
@@ -177,13 +178,11 @@ class Modal extends React.Component {
       document.body.style.overflow = "";
     }
 
-    const options = { smartIndent: true, lineNumbers:true }
+    const options = { smartIndent: true, lineNumbers:true, value: "\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n" }
 
     if( this.props.type ){
       options.mode = this.props.type;
     }
-
-    console.log( options );
 
     return (
       <div data-toggle={this.props.toggleShow}>
