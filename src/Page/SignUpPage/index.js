@@ -38,6 +38,10 @@ class SignUpForm extends React.Component {
       passwordOne
     } = this.state
 
+    if( !email || !passwordOne ){
+      this.setState({ error: { message: "Email or password cannot be blank" } }); 
+    }
+
     const { history } = this.props
 
     auth.doCreateUserWithEmailAndPassword( email, passwordOne )
@@ -92,7 +96,7 @@ class SignUpForm extends React.Component {
         <button disabled={isInvalid} type="submit">
           Sign Up
         </button>
-
+        <div className="clear"></div>
         { error && <p>{error.message}</p> }
       </form>
     )

@@ -50,14 +50,14 @@ class App extends Component {
               <Navigation value={authUser} />
             </div>
           </section>
-          <Switch>
-            <Route exact path={routes.ACCOUNT} component={Account} />
-            <Route exact path={routes.LANDING} component={LandingPage} />
-            <Route exact path={routes.SIGN_UP} component={SignUpPage} />
-            <Route exact path={routes.SIGN_IN} component={SignIn} />
-            <Route exact path={routes.HOME} component={Home} />
-            <Route exact component={NotFound} />
-          </Switch>
+
+          <Route exact path={routes.ACCOUNT} component={Account} />
+          <Route exact path={routes.LANDING} component={LandingPage} />
+          <Route exact path={routes.SIGN_UP} component={SignUpPage} />
+          <Route exact path={routes.SIGN_IN} component={SignIn} />
+          <Route exact path={routes.HOME} component={Home} />
+          <Footer />
+
         </div>
       </Router>
     )
