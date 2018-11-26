@@ -1,6 +1,6 @@
 import React from 'react';
 
-import CodeMirror from 'react-codemirror';
+import {UnControlled as CodeMirror} from 'react-codemirror2'
 
 export default class Modal extends React.Component {
 
@@ -39,7 +39,7 @@ export default class Modal extends React.Component {
               })}
             </select>
             <label>Snippet</label>
-            <CodeMirror name="popup" options={options} style={{float:'left'}} onChange={this.props.snippetChange} name="snippet" value={this.props.snippet} id="modal-popup" />
+            <CodeMirror name="popup" options={options} style={{float:'left',width:'100%'}} onChange={this.props.snippetChange} name="snippet" value={this.props.snippet} id="modal-popup" />
             <button onClick={this.props.addSnippet}>Add Snippet</button>
           </div>
         </div>

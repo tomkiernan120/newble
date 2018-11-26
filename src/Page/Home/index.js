@@ -1,7 +1,8 @@
 import React from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
-import CodeMirror from 'react-codemirror';
+// import CodeMirror from 'react-codemirror';
+import {UnControlled as CodeMirror} from 'react-codemirror2'
 import "../../../node_modules/codemirror/lib/codemirror.css";
 import WithAuthorization from "../../Components/WithAuthorization";
 import { db, firebase } from "../../firebase";
