@@ -4,5 +4,6 @@ import AuthUserContext from './AuthUserContext'
 import SignOut from './SignOut'
 import WithAuthentication from './WithAuthentication'
 import WithAuthorization from './WithAuthorization'
+import Modal from './Modal'
 
-export { App, Navigation, AuthUserContext, SignOut, WithAuthentication, WithAuthorization }
+export { App, Navigation, AuthUserContext, SignOut, WithAuthentication, WithAuthorization, Modal }

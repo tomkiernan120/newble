@@ -71,7 +71,7 @@ export default class Account extends React.Component {
         <div className='inner'>
           <form onSubmit={this.handleSubmit}>
             <h1>Update Account</h1>
-            {this.state.success && <p>Your updates have been saved</p> }
+            {success && <p>Your updates have been saved</p> }
             {errors && <p>{errors}</p>}
             <label>Name</label>
             <input type="text" name="name" value={this.state.name} onChange={this.handleChange} />
