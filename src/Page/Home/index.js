@@ -1,8 +1,6 @@
 import React from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
-// import {CodeMirrorReact as CodeMirror } from '../../Components';
-
 import CodeMirror from 'react-codemirror';
 import "../../../node_modules/codemirror/lib/codemirror.css";
 
@@ -18,7 +16,7 @@ require('codemirror/mode/go/go');
 require('codemirror/mode/htmlmixed/htmlmixed');
 require('codemirror/mode/sass/sass');
 
-// import "../../../node_modules/codemirror/lib/codemirror.css"
+import "../../../node_modules/codemirror/lib/codemirror.css"
 
 const INITIAL_STATE = {
   toggleShow: false,
@@ -123,7 +121,7 @@ class HomePage extends React.Component {
 
   render() {
     const { snippets } = this.state;
-    const options = {lineNumbers:true, tabSize:2, readOnly:true};
+    const options = {lineNumbers:true, tabSize:2, readOnly:false};
     return (
       <main>
         <div className="inner">
@@ -152,6 +150,7 @@ class HomePage extends React.Component {
                       <p>{e.time}</p>
                     </div>  
                     <CodeMirror options={options} />
+
                     <CopyToClipboard text={e.snippet}>
                       <button>Copy</button>
                     </CopyToClipboard>

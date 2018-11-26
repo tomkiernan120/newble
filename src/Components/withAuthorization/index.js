@@ -28,4 +28,4 @@ const WithAuthorization = (authCondition) => (Component) => {
   return withRouter( WithAuthorization );
 }
 
-export default WithAuthorization;
+export default WithAuthorization
