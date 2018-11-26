@@ -12,7 +12,7 @@ export default class Modal extends React.Component {
       document.body.style.overflow = "";
     }
 
-    const options = { smartIndent: true, lineNumbers:true, mode: "javascript", value: "\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n" }
+    const options = { smartIndent: true, lineNumbers:true, mode: "javascript" }
 
     if( this.props.type ){
       options.mode = this.props.type;
