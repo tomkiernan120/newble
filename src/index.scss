@@ -8,52 +8,22 @@
 @import "mixins";
 /* HSL */
 
-$color1: hsla(0%,
-0%,
-96%,
-1);
-$color2: hsla(191%,
-55%,
-53%,
-1);
-$color3: hsla(208%,
-79%,
-76%,
-1);
-$color4: hsla(301%,
-35%,
-47%,
-1);
-$color5: hsla(295%,
-62%,
-32%,
-1);
+$color1: hsla(0%, 0%, 96%, 1);
+$color2: hsla(191%, 55%, 53%, 1);
+$color3: hsla(208%, 79%, 76%, 1);
+$color4: hsla(301%, 35%, 47%, 1);
+$color5: hsla(295%, 62%, 32%, 1);
 /* RGB */
 
-$color1: rgba(244,
-244,
-244,
-1);
-$color2: rgba(70,
-177,
-201,
-1);
-$color3: rgba(145,
-196,
-242,
-1);
-$color4: rgba(161,
-77,
-160,
-1);
-$color5: rgba(126,
-31,
-134,
-1);
+$color1: rgba(244, 244, 244, 1);
+$color2: rgba(70, 177, 201, 1);
+$color3: rgba(145, 196, 242, 1);
+$color4: rgba(161, 77, 160, 1);
+$color5: rgba(126, 31, 134, 1);
 html,
 body,
 #root,
-#root>div {
+#root > div {
   width: 100%;
   height: 100%;
   background: $color1;
@@ -136,7 +106,9 @@ footer {
 main body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -151,14 +123,14 @@ label {
   padding: 1%;
 }
 
-label{
+label {
   padding: 0;
 }
 
 input,
 select,
 textarea {
-  border: 1px solid rgba( 0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.5);
 }
 
 textarea {
@@ -211,7 +183,7 @@ button {
 
 [data-toggle] {
   .overlay {
-    background: rgba( 0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.5);
     position: fixed;
     width: 100%;
     height: 100%;
@@ -228,8 +200,8 @@ button {
     border-radius: 6px;
     top: 50%;
     left: 50%;
-    transform: translate( -50%, -50%);
-    .ReactCodeMirror{
+    transform: translate(-50%, -50%);
+    .ReactCodeMirror {
       width: 100%;
       height: 240px;
       float: left;
@@ -245,7 +217,7 @@ button {
   grid-template-columns: repeat(3, 1fr);
   display: grid;
   grid-gap: 2%;
-  .ReactCodeMirror{
+  .ReactCodeMirror {
     width: 100%;
     height: 240px;
     float: left;
@@ -253,28 +225,42 @@ button {
     margin-bottom: 12px;
   }
   .snippet {
-    background: darken( $color1, 2%);
+    background: darken($color1, 2%);
     padding: 2%;
     code {
       width: 100%;
       float: left;
       margin-bottom: 12px;
-      background: lighten( $color1, 2%);
+      background: lighten($color1, 2%);
       padding: 1%;
     }
   }
 }
 
-.react-codemirror2{
+.react-codemirror2 {
   width: 100%;
-  float:left;
-  height:auto;
+  float: left;
+  height: auto;
 }
 
-.splash{ width:100%;
-float:left; height: auto; min-height: 600px; }
+.splash {
+  width: 100%;
+  float: left;
+  height: auto;
+  min-height: 600px;
+  p{
+    a{
+      text-decoration: none;
+      color: $color2;
+      font-weight: 900;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+}
 
-form{
+form {
   width: 100%;
   margin-bottom: 12px;
   background: #fff;
@@ -284,4 +270,3 @@ form{
   height: auto;
   float: left;
 }
-
