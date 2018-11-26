@@ -2,7 +2,7 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 
 import { SignUPLink } from "../SignUpPage";
-import { auth } from "../../firebase";
+import { auth, firebase } from "../../firebase";
 
 import * as routes from "../../Constants/routes";
 
@@ -34,6 +34,21 @@ export class SignInForm extends React.Component {
 
     this.state = { ...INITIAL_STATE };
     this.onSubmit = this.onSubmit.bind(this);
+    this.googleSignIn = this.googleSignIn.bind(this);
+  }
+
+
+  googleSignIn = event => {
+
+    const { history } = this.props
+    
+    firebase.auth.signInWithPopup( firebase.provider ).then((result) => {
+      this.setState({ ...INITIAL_STATE });
+      history.push(routes.HOME);
+    })
+    .catch((error) => {
+      this.setState({error:error})
+    })
   }
 
   onSubmit = event => {
@@ -77,9 +92,10 @@ export class SignInForm extends React.Component {
           type="password"
           placeholder="Password"
         />
-        <button disabled={isInvalid} type="submit">
+        <button type="submit" disabled={isInvalid} type="submit">
           Sign In
         </button>
+        <button type="button" onClick={this.googleSignIn}>Alternatively Sign In With Google</button>
         <div className='clear'></div>
       </form>
     );
