@@ -11,7 +11,7 @@ export const doCreateUser = (id, username, email) =>
 export const onceGetUsers = () => 
   db.ref('users').once('value')
 
-export const doAddSnippet = ( userid, snippet, title, time) => 
+export const doAddSnippet = ( userid, snippet, title, type, time) => 
   db.ref(`${userid}/snippets`).push().set({
     snippet,
     title,
