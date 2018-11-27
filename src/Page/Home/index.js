@@ -96,7 +96,8 @@ class HomePage extends React.Component {
         string += "Please enter a snippet\r\n";
       }
       this.setState({ errors: string });
-    } else {
+    } 
+    else {
       firebase.auth.onAuthStateChanged(user => {
         if (user) {
           var DT = new Date();
@@ -111,7 +112,8 @@ class HomePage extends React.Component {
           this.setState({ title: "" });
           this.setState({ type: "" });
           this.setState({ toggleShow: false });
-        } else {
+        } 
+        else {
           this.setState({ errors: user.message });
         }
       });
