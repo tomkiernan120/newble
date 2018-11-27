@@ -151,6 +151,24 @@ class HomePage extends React.Component {
             types={this.state.types}
             snippet={this.state.snippet}
           />
+          <div className="search-options">
+            <div className="input">
+              <label>Order</label>
+              <select>
+                <option value="id">By Id</option>
+                <option value="title descending">By Title Descending</option>
+                <option value="title ascending">By Title Ascending</option>
+              </select>
+            </div>
+            <div className="input">
+              <label>Name</label>
+              <input type="text" name="title" placeholder="Search" value="" />
+            </div>
+            <div className="input">
+              <label>DateTime</label>
+              <input type="text" name="title" placeholder="Search" value="" />
+            </div>
+          </div>
           <div className="snippet-container">
             {snippets &&
               snippets.map((e, i) => {

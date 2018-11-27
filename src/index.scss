@@ -260,6 +260,18 @@ button {
   }
 }
 
+.search-options{
+  width:100%;
+  float: left;
+  height: auto;
+  margin-left: -1%;
+  .input{
+    width: 32%;
+    float: left;
+    margin-left: 1%;
+  }
+}
+
 form {
   width: 100%;
   margin-bottom: 12px;
