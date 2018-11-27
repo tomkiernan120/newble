@@ -24,6 +24,9 @@ const INITIAL_STATE = {
   snippet: "",
   errors: null,
   type: '',
+  order: '',
+  queryString: '',
+  dateTime: '',
   types: ['javascript','xml','css','go','html', 'php','htmlmixed','sass'],
   snippets: null
 };
@@ -42,41 +45,55 @@ class HomePage extends React.Component {
   }
 
   componentDidMount() {
+    let currentUser = firebase.auth.currentUser.uid
+    let snippetsRef = firebase.db.ref( `${currentUser}/snippets` );
 
-    firebase.auth.onAuthStateChanged(user => {
-      if (user) {
-        const itemsRef = db.getSnippets(user.uid);
-        let subscription = itemsRef.on("value", snapshot => {
-          let items = snapshot.val();
-          let newState = [];
-          for (let item in items) {
-            newState.push({
-              id: item,
-              title: items[item].title,
-              type: items[item].type,
-              snippet: items[item].snippet,
-              time: items[item].time
-            });
-            this.setState({
-              snippets: newState
-            });
-          }
-        });
-        this.setState({ subscription }); 
-      }
-    });
-  }
-
-  componentWillUnmount() {
-    if( typeof this.state.subscription.off === "function" ){
-      this.state.subscription.off();
+    if( this.state.order.indexOf( "title" ) > -1 ){
+      snippetsRef = snippetsRef.orderByChild( "title" );
     }
+    else {
+      snippetsRef = snippetsRef.orderByKey( );
+    }
+
+    if( this.state.queryString.length ){
+      snippetsRef = snippetsRef.equalTo( this.state.queryString );
+    }
+
+    let newItems = [];
+
+    console.log( "setting   " );
+    console.log( newItems );
+
+    let currentListener = snippetsRef.on( "value", snapshot => {
+      let items = snapshot.val();
+      let newItems = [];
+      for( var key in items ){
+        var item = items[key];
+        var newItem = item;
+        console.log( "new item pushed" );
+        newItems.push( newItem );
+      }
+
+      console.log( "setting snippets state" );
+      console.log( newItems );
+
+      this.setState({ snippets: newItems });
+    });
+
+    
+    // this.setState({ currentListener });
   }
+
+  // componentWillUnmount() {
+  //   if( typeof this.state.currentListener.off === "function" ){
+  //     this.state.currentListener.off();
+  //   }
+  // }
 
   removeSnippet(e) {
     if (window.confirm("Are you sure?")) {
       const userid = firebase.auth.currentUser.uid;
-      db.deleteSnippet(userid, e.target.id);
+      db.deleteSnippet( userid, e.target.id );
     }
   }
 
@@ -86,7 +103,6 @@ class HomePage extends React.Component {
   }
 
   snippetChange(editor, data, value){
-    console.log( value );
     this.setState({ snippet: value })
   }
 
@@ -95,7 +111,8 @@ class HomePage extends React.Component {
   }
 
   addSnippet(e) {
-    if (!this.state.snippet && !this.state.title) {
+    if ( !this.state.snippet && !this.state.title ) {
+
       let string = "";
       if (!this.state.title) {
         string += "Please enter a title\r\n";
@@ -154,7 +171,7 @@ class HomePage extends React.Component {
           <div className="search-options">
             <div className="input">
               <label>Order</label>
-              <select>
+              <select name="order" onChange={this.handleChange}>
                 <option value="id">By Id</option>
                 <option value="title descending">By Title Descending</option>
                 <option value="title ascending">By Title Ascending</option>
@@ -162,11 +179,11 @@ class HomePage extends React.Component {
             </div>
             <div className="input">
               <label>Name</label>
-              <input type="text" name="title" placeholder="Search" value="" />
+              <input type="text" name="querystring" placeholder="Search" onChange={this.handleChange} />
             </div>
             <div className="input">
               <label>DateTime</label>
-              <input type="text" name="title" placeholder="Search" value="" />
+              <input type="text" name="datetime" placeholder="Datetime" onChange={this.handleChange} />
             </div>
           </div>
           <div className="snippet-container">
@@ -184,7 +201,7 @@ class HomePage extends React.Component {
                     <CopyToClipboard text={e.snippet}>
                       <button>Copy</button>
                     </CopyToClipboard>
-                    <button id={e.id} onClick={this.removeSnippet}>
+                    <button data-key={i} id={e.id} onClick={this.removeSnippet}>
                       Delete
                     </button>
                   </div>
