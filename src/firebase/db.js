@@ -15,6 +15,7 @@ export const doAddSnippet = ( userid, snippet, title, time) =>
   db.ref(`${userid}/snippets`).push().set({
     snippet,
     title,
+    type,
     time
   })
 

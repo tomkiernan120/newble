@@ -1,13 +1,10 @@
 import React from 'react';
 
-import {Controlled as CodeMirror} from 'react-codemirror2'
+import {UnControlled as CodeMirror} from 'react-codemirror2'
 
 export default class Modal extends React.Component {
   constructor(props){
     super(props)
-
-    console.log( props );
-
   }
 
   render() {
@@ -23,8 +20,6 @@ export default class Modal extends React.Component {
     if( this.props.type ){
       options.mode = this.props.type;
     }
-
-    console.log( options );
 
     return (
       <div data-toggle={this.props.toggleShow}>
@@ -47,7 +42,7 @@ export default class Modal extends React.Component {
               })}
             </select>
             <label>Snippet</label>
-            <CodeMirror name="popup" options={options} style={{float:'left',width:'100%'}} onChange={( editor, data, value ) => {  console.log( arguments ) }} name="snippet" value={this.props.snippet} id="modal-popup" />
+            <CodeMirror name="popup" options={options} style={{float:'left',width:'100%'}} onChange={this.props.snippetChange} name="snippet" value={this.props.snippet} id="modal-popup" />
             <button onClick={this.props.addSnippet}>Add Snippet</button>
           </div>
         </div>

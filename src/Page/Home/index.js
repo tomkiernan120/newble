@@ -21,7 +21,7 @@ require('codemirror/mode/sass/sass');
 const INITIAL_STATE = {
   toggleShow: false,
   title: "",
-  snippet: "\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+  snippet: "",
   errors: null,
   type: '',
   types: ['javascript','xml','css','go','html', 'php','htmlmixed','sass'],
@@ -42,10 +42,11 @@ class HomePage extends React.Component {
   }
 
   componentDidMount() {
+
     firebase.auth.onAuthStateChanged(user => {
       if (user) {
         const itemsRef = db.getSnippets(user.uid);
-        itemsRef.on("value", snapshot => {
+        let subscription = itemsRef.on("value", snapshot => {
           let items = snapshot.val();
           let newState = [];
           for (let item in items) {
@@ -61,8 +62,15 @@ class HomePage extends React.Component {
             });
           }
         });
+        this.setState({ subscription }); 
       }
     });
+  }
+
+  componentWillUnmount() {
+    if( typeof this.state.subscription.off === "function" ){
+      this.state.subscription.off();
+    }
   }
 
   removeSnippet(e) {
@@ -77,7 +85,7 @@ class HomePage extends React.Component {
     this.setState({ type: '' });
   }
 
-  snippetChange(editor, value){
+  snippetChange(editor, data, value){
     console.log( value );
     this.setState({ snippet: value })
   }
