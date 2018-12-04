@@ -81,14 +81,14 @@ class HomePage extends React.Component {
     });
 
     
-    // this.setState({ currentListener });
+    this.setState({ currentListener });
   }
 
-  // componentWillUnmount() {
-  //   if( typeof this.state.currentListener.off === "function" ){
-  //     this.state.currentListener.off();
-  //   }
-  // }
+  componentWillUnmount() {
+    if( typeof this.state.currentListener.off === "function" ){
+      this.state.currentListener.off();
+    }
+  }
 
   removeSnippet(e) {
     if (window.confirm("Are you sure?")) {
