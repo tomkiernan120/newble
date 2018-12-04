@@ -1,5 +1,5 @@
 version: '3'
-services: 
+services:
   sample-app:
     container_name: newble01
     build:

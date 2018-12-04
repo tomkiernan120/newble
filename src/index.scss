@@ -96,7 +96,7 @@ section.navigation ul li button {
 
 footer {
   position: absolute;
-  bottom: 0px;
+  bottom: 0;
   padding-top: 20px;
   background: $color5;
   height: auto;
@@ -161,7 +161,7 @@ button {
     float: left;
     margin-bottom: 12px;
     padding: 8px;
-    border: 0px;
+    border: 0;
   }
 }
 
@@ -274,7 +274,6 @@ form {
   margin-bottom: 12px;
   background: #fff;
   border-radius: 4px;
-  background: #fff;
   padding: 5%;
   height: auto;
   float: left;
