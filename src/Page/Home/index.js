@@ -4,7 +4,7 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 // import CodeMirror from 'react-codemirror';
 import {UnControlled as CodeMirror} from 'react-codemirror2'
 import "../../../node_modules/codemirror/lib/codemirror.css";
-import WithAuthorization from "../../Components/WithAuthorization";
+import withAuthorization from "../../Components/withAuthorization";
 import { db, firebase } from "../../firebase";
 import "../../../node_modules/codemirror/lib/codemirror.css"
 
@@ -80,14 +80,14 @@ class HomePage extends React.Component {
     });
 
     
-    // this.setState({ currentListener });
+    this.setState({ currentListener });
   }
 
-  // componentWillUnmount() {
-  //   if( typeof this.state.currentListener.off === "function" ){
-  //     this.state.currentListener.off();
-  //   }
-  // }
+  componentWillUnmount() {
+    if( typeof this.state.currentListener.off === "function" ){
+      this.state.currentListener.off();
+    }
+  }
 
   removeSnippet(e) {
     if (window.confirm("Are you sure?")) {
@@ -198,4 +198,4 @@ class HomePage extends React.Component {
 
 const authCondition = authUser => !!authUser;
 
-export default WithAuthorization(authCondition)(HomePage);
+export default withAuthorization(authCondition)(HomePage);

@@ -92,7 +92,7 @@ export class SignInForm extends React.Component {
           type="password"
           placeholder="Password"
         />
-        <button type="submit" disabled={isInvalid} type="submit">
+        <button type="submit" disabled={isInvalid} >
           Sign In
         </button>
         <button type="button" onClick={this.googleSignIn}>Alternatively Sign In With Google</button>
