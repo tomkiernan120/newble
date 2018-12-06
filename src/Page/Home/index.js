@@ -8,7 +8,7 @@ import WithAuthorization from "../../Components/WithAuthorization";
 import { db, firebase } from "../../firebase";
 import "../../../node_modules/codemirror/lib/codemirror.css"
 
-import { Modal } from '../../Components'
+import { Modal, SnippetGrid } from '../../Components';
 
 require('codemirror/mode/javascript/javascript');
 require('codemirror/mode/xml/xml');
@@ -16,7 +16,6 @@ require('codemirror/mode/css/css');
 require('codemirror/mode/go/go');
 require('codemirror/mode/htmlmixed/htmlmixed');
 require('codemirror/mode/sass/sass');
-
 
 const INITIAL_STATE = {
   toggleShow: false,
@@ -151,6 +150,7 @@ class HomePage extends React.Component {
 
   render() {
     const { snippets } = this.state;
+
     const options = {lineNumbers:true, tabSize:2, readOnly:true, smartIndent: true, mode: "javascript"};
     return (
       <main>
@@ -187,26 +187,7 @@ class HomePage extends React.Component {
             </div>
           </div>
           <div className="snippet-container">
-            {snippets &&
-              snippets.map((e, i) => {
-                return (
-                  <div key={i} className="snippet">
-                    <div className="heading">
-                      <p>
-                        <strong>{e.title}</strong>
-                      </p>
-                      <p>{e.time}</p>
-                    </div>  
-                    <CodeMirror value={e.snippet} options={options} />
-                    <CopyToClipboard text={e.snippet}>
-                      <button>Copy</button>
-                    </CopyToClipboard>
-                    <button data-key={i} id={e.id} onClick={this.removeSnippet}>
-                      Delete
-                    </button>
-                  </div>
-                );
-              })}
+            {snippets && <SnippetGrid snippets={snippets} /> }
           </div>
         </div>
       </main>
