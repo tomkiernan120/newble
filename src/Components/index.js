@@ -8,4 +8,4 @@ import Modal from './Modal'
 import Snippet from './Snippet'
 import SnippetGrid from './SnippetGrid'
 
-export { App, Navigation, AuthUserContext, SignOut, WithAuthentication, WithAuthorization, Modal, Snippet, SnippetGrid }
+export { App, Navigation, AuthUserContext, SignOut, withAuthentication, withAuthorization, Modal, Snippet, SnippetGrid }
