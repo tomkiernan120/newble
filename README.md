@@ -1,4 +1,4 @@
-![build image Travis CI](https://travis-ci.org/tomkiernan120/newble.svg?branch=master)
+[![Build Status](https://travis-ci.org/tomkiernan120/newble.svg?branch=master)](https://travis-ci.org/tomkiernan120/newble)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
