@@ -51,8 +51,7 @@ class SignUpForm extends React.Component {
       })
       .catch( error => {
         this.setState( byPropKey( 'error', error ) );
-      }) 
-
+      });
   }
 
   render() {

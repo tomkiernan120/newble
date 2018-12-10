@@ -38,24 +38,27 @@ export default class Account extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    firebase.auth.currentUser.updateEmail(this.state.email).then(() =>{
-
-    }).catch(errors => {
-            console.log( errors );
-    })
-
-    firebase.auth.currentUser.updatePassword(this.state.password).then(() =>{
+    firebase.auth.currentUser.updateEmail(this.state.email).then(() => {
 
     }).catch(errors => {
       console.log( errors );
-      // this.setState({errors: errors});
     })
+
+
+    if( this.state.password ){
+      firebase.auth.currentUser.updatePassword( this.state.password ).then(() => {
+
+      }).catch(errors => {
+        console.log( errors );
+        this.setState({errors: errors});
+      });
+    }
+
 
     firebase.auth.currentUser.updateProfile({ displayName: this.state.name, photoURL: null }).then(() =>{
 
     }).catch(errors => {
-      console.log( errors );
-      // this.setState({errors: errors});
+      this.setState({errors: errors});
     })
 
     if( !this.state.errors ){
@@ -66,13 +69,14 @@ export default class Account extends React.Component {
 
   render() {
     const { success, errors } = this.state
+    console.log( errors );
     return (
       <main>
         <div className='inner'>
           <form onSubmit={this.handleSubmit}>
             <h1>Update Account</h1>
             {success && <p>Your updates have been saved</p> }
-            {errors && <p>{errors}</p>}
+            {errors && <p>{errors.message}</p>}
             <label>Name</label>
             <input type="text" name="name" value={this.state.name} onChange={this.handleChange} />
             <label>Email</label>
