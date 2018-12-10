@@ -1,3 +1,5 @@
+https://travis-ci.org/tomkiernan120/newble.svg?branch=master
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
