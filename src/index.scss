@@ -20,6 +20,8 @@ $color2: rgba(70, 177, 201, 1);
 $color3: rgba(145, 196, 242, 1);
 $color4: rgba(161, 77, 160, 1);
 $color5: rgba(126, 31, 134, 1);
+
+
 html,
 body,
 #root,
@@ -210,26 +212,16 @@ button {
 }
 
 .snippet-container {
-  width: 100%;
+  width:100%;
   float: left;
-  margin-left: -1%;
-  .ReactCodeMirror {
-    width: 100%;
-    height: 200px;
-    float: left;
-    margin-bottom: 12px;
-  }
+  display: grid;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
   .snippet {
-    height: 500px;
-    width: 100%;
-    float: left;
-    margin-bottom: 12px;
-    background: darken($color1, 2%);
-    padding: 2%;
-    width: 31.33%;
-    margin-left: 1%;
-    float: left;
-    height: 500px;
+    overflow-x: scroll;
+    height: auto;
+    min-height: 280px;
     code {
       width: 100%;
       float: left;

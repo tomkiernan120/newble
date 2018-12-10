@@ -69,7 +69,6 @@ export default class Account extends React.Component {
 
   render() {
     const { success, errors } = this.state
-    console.log( errors );
     return (
       <main>
         <div className='inner'>
