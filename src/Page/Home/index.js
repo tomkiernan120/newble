@@ -60,21 +60,14 @@ class HomePage extends React.Component {
 
     let newItems = [];
 
-    console.log( "setting   " );
-    console.log( newItems );
-
     let currentListener = snippetsRef.on( "value", snapshot => {
       let items = snapshot.val();
       let newItems = [];
       for( var key in items ){
         var item = items[key];
         var newItem = item;
-        console.log( "new item pushed" );
         newItems.push( newItem );
       }
-
-      console.log( "setting snippets state" );
-      console.log( newItems );
 
       this.setState({ snippets: newItems });
     });

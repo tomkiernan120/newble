@@ -7,8 +7,6 @@ import {UnControlled as CodeMirror} from 'react-codemirror2'
 export default class index extends React.Component {
   constructor(props) {
     super(props);
-
-    console.log( props )
   }
 
   render() {
