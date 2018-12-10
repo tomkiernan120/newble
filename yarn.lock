@@ -864,7 +864,7 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
-"@firebase/app-types@0.3.2", "@firebase/app-types@^0.3.2":
+"@firebase/app-types@0.3.2":
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/@firebase/app-types/-/app-types-0.3.2.tgz#a92dc544290e2893bd8c02a81e684dae3d8e7c85"
   integrity sha512-ZD8lTgW07NGgo75bTyBJA8Lt9+NweNzot7lrsBtIvfciwUzaFJLsv2EShqjBeuhF7RpG6YFucJ6m67w5buCtzw==
@@ -2473,7 +2473,7 @@ code-point-at@^1.0.0:
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
   integrity sha1-DQcLTQQ6W+ozovGkDi7bPZpMz3c=
 
-codemirror@^5.42.0:
+codemirror@5.42.0:
   version "5.42.0"
   resolved "https://registry.yarnpkg.com/codemirror/-/codemirror-5.42.0.tgz#2d5b640ed009e89dee9ed8a2a778e2a25b65f9eb"
   integrity sha512-pbApC8zDzItP3HRphD6kQVwS976qB5Qi0hU3MZMixLk+AyugOW1RF+8XJEjeyl5yWsHNe88tDUxzeRh5AOxPRw==
@@ -4152,7 +4152,7 @@ find-up@^2.0.0, find-up@^2.1.0:
   dependencies:
     locate-path "^2.0.0"
 
-firebase@^5.5.8:
+firebase@5.5.8:
   version "5.5.8"
   resolved "https://registry.yarnpkg.com/firebase/-/firebase-5.5.8.tgz#65a39f5b9db62275d4d1a77e5d1415b7336dbca5"
   integrity sha512-aT75TO8JLX2bTsPLq/2FrX87sgsvSF7mFDJBKl+hC5yJeaT3fuqrn806lQ56TRGWXFi5oYENYn00hmy/4PR0AQ==
@@ -6847,7 +6847,7 @@ node-releases@^1.0.0-alpha.11, node-releases@^1.0.0-alpha.14:
   dependencies:
     semver "^5.3.0"
 
-node-sass@^4.10.0:
+node-sass@4.10.0:
   version "4.10.0"
   resolved "https://registry.yarnpkg.com/node-sass/-/node-sass-4.10.0.tgz#dcc2b364c0913630945ccbf7a2bbf1f926effca4"
   integrity sha512-fDQJfXszw6vek63Fe/ldkYXmRYK/QS6NbvM3i5oEo9ntPDy4XX7BcKZyTKv+/kSSxRtXXc7l+MSwEmYc0CSy6Q==
@@ -6914,7 +6914,7 @@ normalize-url@^3.0.0:
   resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-3.3.0.tgz#b2e1c4dc4f7c6d57743df733a4f5978d18650559"
   integrity sha512-U+JJi7duF1o+u2pynbp2zXDW2/PADgC30f0GsHZtRh+HOcXHnw137TrNlyxxRvWW5fjKd3bcLHPxofWuCjaeZg==
 
-normalize.css@^8.0.1:
+normalize.css@8.0.1:
   version "8.0.1"
   resolved "https://registry.yarnpkg.com/normalize.css/-/normalize.css-8.0.1.tgz#9b98a208738b9cc2634caacbc42d131c97487bf3"
   integrity sha512-qizSNPO93t1YUuUhP22btGOo3chcvDFqFaj2TRybP0DMxkHOCTYwp3n34fel4a31ORXy4m1Xq0Gyqpb5m33qIg==
@@ -8371,7 +8371,7 @@ rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-ace-editor@^0.0.3:
+react-ace-editor@0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/react-ace-editor/-/react-ace-editor-0.0.3.tgz#0f0b85d7695c13c728e5b74bd6e4291dc07e9d15"
   integrity sha512-Tssqvr1UCAibU4p15j1I7jEENxCDTxYGdfnJy+1SAhX8aMTUFC23Jts2eH/SJv10yORxV5Uro/ZzZzi5scD9zA==
@@ -8391,12 +8391,12 @@ react-app-polyfill@^0.1.3:
     raf "3.4.0"
     whatwg-fetch "3.0.0"
 
-react-codemirror2@^5.1.0:
+react-codemirror2@5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/react-codemirror2/-/react-codemirror2-5.1.0.tgz#62de4460178adea40eb52eabf7491669bf3794b8"
   integrity sha512-Cksbgbviuf2mJfMyrKmcu7ycK6zX/ukuQO8dvRZdFWqATf5joalhjFc6etnBdGCcPA2LbhIwz+OPnQxLN/j1Fw==
 
-react-copy-to-clipboard@^5.0.1:
+react-copy-to-clipboard@5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/react-copy-to-clipboard/-/react-copy-to-clipboard-5.0.1.tgz#8eae107bb400be73132ed3b6a7b4fb156090208e"
   integrity sha512-ELKq31/E3zjFs5rDWNCfFL4NvNFQvGRoJdAKReD/rUPA+xxiLPQmZBZBvy2vgH7V0GE9isIQpT9WXbwIVErYdA==
@@ -8404,7 +8404,7 @@ react-copy-to-clipboard@^5.0.1:
     copy-to-clipboard "^3"
     prop-types "^15.5.8"
 
-react-datepicker@^2.0.0:
+react-datepicker@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/react-datepicker/-/react-datepicker-2.0.0.tgz#5818edfdd08af1b18cbc02b8a1c842cec906606f"
   integrity sha512-3L3PrZLqbnEIBDXh4RkwlClCaCOFOPd2WYezo4vjXz5PSogrpXtG6UuAc21JtF8+3bBgcsZ/2BUH5F5b89VHsA==
@@ -8445,7 +8445,7 @@ react-dev-utils@^6.1.1:
     strip-ansi "4.0.0"
     text-table "0.2.0"
 
-react-dom@^16.6.1:
+react-dom@16.6.3:
   version "16.6.3"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.6.3.tgz#8fa7ba6883c85211b8da2d0efeffc9d3825cccc0"
   integrity sha512-8ugJWRCWLGXy+7PmNh8WJz3g1TaTUt1XyoIcFN+x0Zbkoz+KKdUyx1AQLYJdbFXjuF41Nmjn5+j//rxvhFjgSQ==
@@ -8460,7 +8460,7 @@ react-error-overlay@^5.1.0:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-5.1.0.tgz#c516995a5652e7bfbed8b497910d5280df74a7e8"
   integrity sha512-akMy/BQT5m1J3iJIHkSb4qycq2wzllWsmmolaaFVnb+LPV9cIJ/nTud40ZsiiT0H3P+/wXIdbjx2fzF61OaeOQ==
 
-react-helmet@^5.2.0:
+react-helmet@5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/react-helmet/-/react-helmet-5.2.0.tgz#a81811df21313a6d55c5f058c4aeba5d6f3d97a7"
   integrity sha1-qBgR3yExOm1VxfBYxK66XW89l6c=
@@ -8475,7 +8475,7 @@ react-onclickoutside@^6.7.1:
   resolved "https://registry.yarnpkg.com/react-onclickoutside/-/react-onclickoutside-6.7.1.tgz#6a5b5b8b4eae6b776259712c89c8a2b36b17be93"
   integrity sha512-p84kBqGaMoa7VYT0vZ/aOYRfJB+gw34yjpda1Z5KeLflg70HipZOT+MXQenEhdkPAABuE2Astq4zEPdMqUQxcg==
 
-react-particles-js@^2.4.2:
+react-particles-js@2.4.2:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/react-particles-js/-/react-particles-js-2.4.2.tgz#34a4d1ea15eaebcbb068f7b6a7c43b18792fcf65"
   integrity sha512-/rfpLRYUA4JFEBBM8cN3X+kEr9P7J2lXktJi81ugcK6B9H69xNlDFKXOUYe+YizW8E5NapxNgubAcKYt0Co7TQ==
@@ -8493,7 +8493,7 @@ react-popper@^1.0.2:
     typed-styles "^0.0.5"
     warning "^3.0.0"
 
-react-router-dom@^4.3.1:
+react-router-dom@4.3.1:
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-4.3.1.tgz#4c2619fc24c4fa87c9fd18f4fb4a43fe63fbd5c6"
   integrity sha512-c/MlywfxDdCp7EnB7YfPMOfMD3tOtIjrQlj/CKfNMBxdmpJP8xcz5P/UAFn3JbnQCNUxsHyVVqllF9LhgVyFCA==
@@ -8581,7 +8581,7 @@ react-side-effect@^1.1.0:
     exenv "^1.2.1"
     shallowequal "^1.0.1"
 
-react-tooltip@^3.9.0:
+react-tooltip@3.9.0:
   version "3.9.0"
   resolved "https://registry.yarnpkg.com/react-tooltip/-/react-tooltip-3.9.0.tgz#d874df922c3b34b2e547ec62ff8b2eef42017b51"
   integrity sha512-vpn738FVv2oe2LzdwUchped3WqLgZSQwrBow+ceChS1+lFEJBPjOa9KD3JH/L/s0Aorxawi3A20qBcHX7vqaag==
@@ -8590,7 +8590,7 @@ react-tooltip@^3.9.0:
     prop-types "^15.6.0"
     sanitize-html-react "^1.13.0"
 
-react@^16.4.2, react@^16.6.1:
+react@16.6.3, react@^16.4.2:
   version "16.6.3"
   resolved "https://registry.yarnpkg.com/react/-/react-16.6.3.tgz#25d77c91911d6bbdd23db41e70fb094cc1e0871c"
   integrity sha512-zCvmH2vbEolgKxtqXL2wmGCUxUyNheYn/C+PD1YAjfxHC54+MhdruyhO7QieQrYsYeTxrn93PM2y0jRH1zEExw==
@@ -10219,7 +10219,7 @@ utils-merge@1.0.1:
   resolved "https://registry.yarnpkg.com/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
   integrity sha1-n5VxD1CiZ5R7LMwSR0HBAoQn5xM=
 
-uuid@^3.0.1, uuid@^3.3.2:
+uuid@3.3.2, uuid@^3.0.1, uuid@^3.3.2:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"
   integrity sha512-yXJmeNaw3DnnKAOKJE51sL/ZaYfWJRl1pK9dr19YFCu0ObS231AB1/LbqTKRAQ5kw8A90rA6fr4riOUpTZvQZA==
