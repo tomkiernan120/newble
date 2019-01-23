@@ -26,7 +26,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "npm run build && now --token=qX7EEFynLhF72Z3BTADYGbcV --public"
+    "deploy": "npm run brunch build -p && now --token=qX7EEFynLhF72Z3BTADYGbcV --public"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -38,6 +38,9 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "envify": "^4.1.0",
+    "uglify-js": "^3.4.9",
+    "uglifyify": "^5.0.1"
     "now": "13.1.2"
   }
 }
