@@ -148,7 +148,7 @@ class HomePage extends React.Component {
     return (
       <main>
         <div className="inner">
-          <button onClick={this.toggleShow}>Add Snippet</button>
+          <button className="addtion" onClick={this.toggleShow}>Add Snippet</button>
           <Modal
             addSnippet={this.addSnippet}
             errors={this.state.errors}
