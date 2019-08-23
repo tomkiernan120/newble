@@ -39,16 +39,17 @@ export class SignInForm extends React.Component {
 
 
   googleSignIn = event => {
+    alert( 'Currently not working.' )
 
-    const { history } = this.props
-    
-    firebase.auth.signInWithPopup( firebase.provider ).then((result) => {
-      this.setState({ ...INITIAL_STATE });
-      history.push(routes.HOME);
-    })
-    .catch((error) => {
-      this.setState({error:error})
-    })
+    // const { history } = this.props
+    //
+    // firebase.auth.signInWithPopup( firebase.provider ).then((result) => {
+    //   this.setState({ ...INITIAL_STATE });
+    //   history.push(routes.HOME);
+    // })
+    // .catch((error) => {
+    //   this.setState({error:error})
+    // })
   }
 
   onSubmit = event => {
@@ -75,6 +76,7 @@ export class SignInForm extends React.Component {
     const isInvalid = password === "" || email === "";
     return (
       <form onSubmit={this.onSubmit}>
+        <h2>Sign In</h2>
         {error && <p>{error.message}</p>}
         <input
           value={email}

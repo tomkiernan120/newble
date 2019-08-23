@@ -157,6 +157,10 @@ button {
   top: 50%;
   left: 50%;
   width: 20%;
+  input{
+    background: darken( #fff, 4% );
+    border-radius: 8px;
+  }
   input,
   button {
     width: 100%;

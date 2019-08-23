@@ -3,21 +3,23 @@ import 'firebase/auth'
 import 'firebase/database'
 
 const devConfig = {
-  apiKey: "AIzaSyBXc9oTRIQkqPdEiB-H0YxayqB_Bcrujh0",
-  authDomain: "newbie-e9b0c.firebaseapp.com",
-  databaseURL: "https://newbie-e9b0c.firebaseio.com",
-  projectId: "newbie-e9b0c",
-  storageBucket: "newbie-e9b0c.appspot.com",
-  messagingSenderId: "787473401115"
+  apiKey: "AIzaSyB0hreq7bta_oDPV6qwqFrzNMh6U6W94CY",
+  authDomain: "newble.firebaseapp.com",
+  databaseURL: "https://newble.firebaseio.com",
+  projectId: "newble",
+  storageBucket: "",
+  messagingSenderId: "423886335226",
+  appId: "1:423886335226:web:86c98af7dae391ca"
 }
 
 const prodConfig = {
-  apiKey: "AIzaSyBXc9oTRIQkqPdEiB-H0YxayqB_Bcrujh0",
-  authDomain: "newbie-e9b0c.firebaseapp.com",
-  databaseURL: "https://newbie-e9b0c.firebaseio.com",
-  projectId: "newbie-e9b0c",
-  storageBucket: "newbie-e9b0c.appspot.com",
-  messagingSenderId: "787473401115"
+  apiKey: "AIzaSyB0hreq7bta_oDPV6qwqFrzNMh6U6W94CY",
+  authDomain: "newble.firebaseapp.com",
+  databaseURL: "https://newble.firebaseio.com",
+  projectId: "newble",
+  storageBucket: "",
+  messagingSenderId: "423886335226",
+  appId: "1:423886335226:web:86c98af7dae391ca"
 }
 
 const config = process.env.NODE_ENV === 'production'

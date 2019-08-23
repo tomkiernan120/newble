@@ -45,7 +45,7 @@ class HomePage extends React.Component {
 
   componentDidMount() {
     let currentUser = firebase.auth.currentUser.uid
-    let snippetsRef = firebase.db.ref( `${currentUser}/snippets` );
+    let snippetsRef = firebase.db.ref( `users/${currentUser}/snippets` );
 
     if( this.state.order.indexOf( "title" ) > -1 ){
       snippetsRef = snippetsRef.orderByChild( "title" );
@@ -72,7 +72,7 @@ class HomePage extends React.Component {
       this.setState({ snippets: newItems });
     });
 
-    
+
     this.setState({ currentListener });
   }
 
@@ -113,7 +113,7 @@ class HomePage extends React.Component {
         string += "Please enter a snippet\r\n";
       }
       this.setState({ errors: string });
-    } 
+    }
     else {
       firebase.auth.onAuthStateChanged(user => {
         if (user) {
@@ -129,7 +129,7 @@ class HomePage extends React.Component {
           this.setState({ title: "" });
           this.setState({ type: "" });
           this.setState({ toggleShow: false });
-        } 
+        }
         else {
           this.setState({ errors: user.message });
         }
