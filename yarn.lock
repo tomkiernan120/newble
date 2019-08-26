@@ -7606,10 +7606,10 @@ normalize.css@8.0.1:
   resolved "https://registry.yarnpkg.com/normalize.css/-/normalize.css-8.0.1.tgz#9b98a208738b9cc2634caacbc42d131c97487bf3"
   integrity sha512-qizSNPO93t1YUuUhP22btGOo3chcvDFqFaj2TRybP0DMxkHOCTYwp3n34fel4a31ORXy4m1Xq0Gyqpb5m33qIg==
 
-now@13.1.2:
-  version "13.1.2"
-  resolved "https://registry.yarnpkg.com/now/-/now-13.1.2.tgz#dda24eb622edeedc43e694d31d9c81f2154896c4"
-  integrity sha512-v6K4141Zcw/EsEC88uQ8DusP5LnbLIYFEblpH9BiQXCx4s4qmk56xxT7AXRCFBMtUFTX0hF8Bd2rqWGs0HzjAQ==
+now@16.1.2:
+  version "16.1.2"
+  resolved "https://registry.yarnpkg.com/now/-/now-16.1.2.tgz#9c05dc83852a4ff80534fe3830b53fdf807ff974"
+  integrity sha512-Wqbox4tfh1kglgKOOHRE49bsZoy1TMHsVSnrnEbC98LU+aXmuh853kKheyDXckqIaTGDAgs7HYV12ONgppLwUw==
 
 npm-bundled@^1.0.1:
   version "1.0.5"
