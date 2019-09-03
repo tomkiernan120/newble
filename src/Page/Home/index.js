@@ -1,8 +1,6 @@
 import React from "react";
-import { CopyToClipboard } from "react-copy-to-clipboard";
-
 // import CodeMirror from 'react-codemirror';
-import {UnControlled as CodeMirror} from 'react-codemirror2'
+
 import "../../../node_modules/codemirror/lib/codemirror.css";
 import withAuthorization from "../../Components/withAuthorization";
 import { db, firebase } from "../../firebase";
@@ -144,7 +142,6 @@ class HomePage extends React.Component {
   render() {
     const { snippets } = this.state;
 
-    const options = {lineNumbers:true, tabSize:2, readOnly:true, smartIndent: true, mode: "javascript"};
     return (
       <main>
         <div className="inner">

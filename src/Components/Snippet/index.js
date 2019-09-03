@@ -7,6 +7,17 @@ import {UnControlled as CodeMirror} from 'react-codemirror2'
 export default class index extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = { copied: false };
+
+    this.onCopy = this.onCopy.bind(this);
+  }
+
+  onCopy() {
+    this.setState({ copied: true });
+    // setTimeout( function(){
+    //   this.setState({ copied: false });
+    // }.bind( this ), 500 );
   }
 
   render() {
@@ -23,8 +34,11 @@ export default class index extends React.Component {
             <p>{this.props.snippet.time}</p>
           </div>
           <CodeMirror value={this.props.snippet.snippet} options={options} />
-          <CopyToClipboard text={this.props.snippet.snippet}>
-            <button>Copy</button>
+          <CopyToClipboard onCopy={this.onCopy} text={this.props.snippet.snippet}>
+            <button>
+              { this.state.copied && <span className="response">Copied</span> }
+              Copy
+            </button>
           </CopyToClipboard>
           <button data-key={this.props.index} id={this.props.snippet.index} onClick={this.props.removeSnippet}>
             Delete
