@@ -3,9 +3,9 @@ import React from 'react';
 import { Snippet } from '../'
 
 export default class SnippetGrid extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   render() {
     var snippets = this.props.snippets;
