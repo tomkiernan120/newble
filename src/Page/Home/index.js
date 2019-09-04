@@ -39,9 +39,15 @@ class HomePage extends React.Component {
     this.addSnippet = this.addSnippet.bind(this);
     this.removeSnippet = this.removeSnippet.bind(this);
     this.snippetChange = this.snippetChange.bind(this);
+    this.updateSnippets = this.updateSnippets.bind(this);
   }
 
   componentDidMount() {
+    this.updateSnippets();
+  }
+
+  updateSnippets() {
+    console.log( this.state );
     let currentUser = firebase.auth.currentUser.uid
     let snippetsRef = firebase.db.ref( `users/${currentUser}/snippets` );
 
@@ -96,7 +102,8 @@ class HomePage extends React.Component {
   }
 
   handleChange(e) {
-    this.setState({ [e.target.name]: e.target.value });
+    e.preventDefault();
+    this.setState({ [e.target.name]: e.target.value }, this.updateSnippets );
   }
 
   addSnippet(e) {
@@ -112,7 +119,7 @@ class HomePage extends React.Component {
       this.setState({ errors: string });
     }
     else {
-      firebase.auth.onAuthStateChanged(user => {
+      firebase.auth.onAuthStateChanged( user => {
         if (user) {
           var DT = new Date();
           db.doAddSnippet(
@@ -168,7 +175,7 @@ class HomePage extends React.Component {
             </div>
             <div className="input">
               <label>Name</label>
-              <input type="text" name="querystring" placeholder="Search" onChange={this.handleChange} />
+              <input type="text" name="queryString" placeholder="Search" onChange={this.handleChange} />
             </div>
             <div className="input">
               <label>DateTime</label>
