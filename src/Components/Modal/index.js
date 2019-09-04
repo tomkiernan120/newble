@@ -1,12 +1,14 @@
 import React from 'react';
 
-import {UnControlled as CodeMirror} from 'react-codemirror2'
+// import {UnControlled as CodeMirror} from 'react-codemirror2'
+
+import { CodeMirrorPart } from '../';
 
 export default class Modal extends React.Component {
   render() {
     if (this.props.toggleShow) {
       document.body.style.overflow = "hidden";
-    } 
+    }
     else {
       document.body.style.overflow = "";
     }
@@ -38,7 +40,7 @@ export default class Modal extends React.Component {
               })}
             </select>
             <label>Snippet</label>
-            <CodeMirror options={options} style={{float:'left',width:'100%'}} onChange={this.props.snippetChange} name="snippet" value={this.props.snippet} id="modal-popup" />
+            <CodeMirrorPart options={options} style={{float:'left',width:'100%'}} onChange={this.props.snippetChange} name="snippet" value={this.props.snippet} id="modal-popup" />
             <button onClick={this.props.addSnippet}>Add Snippet</button>
           </div>
         </div>

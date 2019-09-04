@@ -2,6 +2,8 @@ import React from 'react';
 
 import CodeMirror from 'codemirror';
 
+import 'codemirror/lib/codemirror.css';
+
 export default class CodeMirrorPart extends React.Component {
   constructor( props ) {
       super(props);
@@ -27,7 +29,7 @@ export default class CodeMirrorPart extends React.Component {
 
   render() {
     return (
-      <textarea ref={this.myRef}></textarea>
+      <div ref={this.myRef}></div>
     )
   }
 }
