@@ -56,7 +56,6 @@ class HomePage extends React.Component {
       snippetsRef = snippetsRef.equalTo( this.state.queryString );
     }
 
-    let newItems = [];
 
     let currentListener = snippetsRef.on( "value", snapshot => {
       let items = snapshot.val();

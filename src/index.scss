@@ -1,6 +1,8 @@
 * {
   position: relative;
   box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 
 @import url("https://fonts.googleapis.com/css?family=Quicksand:300,400,700");
@@ -147,10 +149,12 @@ label {
   float: left;
   margin-bottom: 12px;
   padding: 1%;
+  height: 32px;
 }
 
 label {
   padding: 0;
+  height: 20px;
 }
 
 input,
@@ -206,12 +210,18 @@ button {
   span {
     &.response{
       position: absolute;
-      top: -90%;
+      top: -30%;
       left: 50%;
       transform: translateX(-50%);
       text-align: center;
       color: red;
+      opacity: 0;
       outline: 0;
+      transition: 500ms all ease-out;
+      &.show {
+        opacity: 1;
+        top: -90%;
+      }
     }
   }
 }

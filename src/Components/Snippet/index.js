@@ -15,9 +15,9 @@ export default class index extends React.Component {
 
   onCopy() {
     this.setState({ copied: true });
-    // setTimeout( function(){
-    //   this.setState({ copied: false });
-    // }.bind( this ), 500 );
+    setTimeout( function(){
+      this.setState({ copied: false });
+    }.bind( this ), 500 );
   }
 
   render() {
@@ -36,7 +36,7 @@ export default class index extends React.Component {
           <CodeMirror value={this.props.snippet.snippet} options={options} />
           <CopyToClipboard onCopy={this.onCopy} text={this.props.snippet.snippet}>
             <button>
-              { this.state.copied && <span className="response">Copied</span> }
+              <span className={this.state.copied ? "response show" : "response" }>Copied</span>
               Copy
             </button>
           </CopyToClipboard>
