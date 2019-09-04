@@ -1,8 +1,11 @@
 import React from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
+import moment from 'moment';
+
 // import CodeMirror from 'react-codemirror';
-import {UnControlled as CodeMirror} from 'react-codemirror2'
+// import {UnControlled as CodeMirror} from 'react-codemirror2'
+import { CodeMirrorPart } from '../';
 
 export default class index extends React.Component {
   constructor(props) {
@@ -22,7 +25,11 @@ export default class index extends React.Component {
 
   render() {
 
-    const options = {lineNumbers:true, tabSize:2, readOnly:true, smartIndent: true, mode: "javascript"};
+    const options = { lineNumbers: true, tabSize:2, readOnly: true, smartIndent: true, mode: "javascript" };
+
+    const date = new Date( this.props.snippet.time );
+
+    const datesnippet = moment( date );
 
     return (
       <React.Fragment>
@@ -31,15 +38,18 @@ export default class index extends React.Component {
             <p>
               <strong>{this.props.snippet.title}</strong>
             </p>
-            <p>{this.props.snippet.time}</p>
+            <p>{datesnippet.format('MMMM Do YYYY, h:mm a')}</p>
           </div>
-          <CodeMirror value={this.props.snippet.snippet} options={options} />
+          <CodeMirrorPart value={this.props.snippet.snippet} options={options} />
           <CopyToClipboard onCopy={this.onCopy} text={this.props.snippet.snippet}>
             <button>
               <span className={this.state.copied ? "response show" : "response" }>Copied</span>
               Copy
             </button>
           </CopyToClipboard>
+          <button>
+            Options
+          </button>
           <button data-key={this.props.index} id={this.props.snippet.index} onClick={this.props.removeSnippet}>
             Delete
           </button>

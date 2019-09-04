@@ -6,7 +6,7 @@ import withAuthorization from "../../Components/withAuthorization";
 import { db, firebase } from "../../firebase";
 import "../../../node_modules/codemirror/lib/codemirror.css"
 
-import { Modal, SnippetGrid } from '../../Components';
+import { Modal, SnippetGrid, CodeMirrorPart } from '../../Components';
 
 require('codemirror/mode/javascript/javascript');
 require('codemirror/mode/xml/xml');
@@ -20,7 +20,7 @@ const INITIAL_STATE = {
   title: "",
   snippet: "",
   errors: null,
-  type: '',
+  type: 'javascript',
   order: '',
   queryString: '',
   dateTime: '',
@@ -47,21 +47,8 @@ class HomePage extends React.Component {
   }
 
   updateSnippets() {
-    console.log( this.state );
     let currentUser = firebase.auth.currentUser.uid
     let snippetsRef = firebase.db.ref( `users/${currentUser}/snippets` );
-
-    if( this.state.order.indexOf( "title" ) > -1 ){
-      snippetsRef = snippetsRef.orderByChild( "title" );
-    }
-    else {
-      snippetsRef = snippetsRef.orderByKey( );
-    }
-
-    if( this.state.queryString.length ){
-      snippetsRef = snippetsRef.equalTo( this.state.queryString );
-    }
-
 
     let currentListener = snippetsRef.on( "value", snapshot => {
       let items = snapshot.val();
@@ -94,11 +81,10 @@ class HomePage extends React.Component {
 
   toggleShow() {
     this.setState({ toggleShow: !this.state.toggleShow });
-    this.setState({ type: '' });
   }
 
-  snippetChange(editor, data, value){
-    this.setState({ snippet: value })
+  snippetChange( editor, data, value ) {
+    this.setState({ snippet: value });
   }
 
   handleChange(e) {
@@ -110,12 +96,15 @@ class HomePage extends React.Component {
     if ( !this.state.snippet && !this.state.title ) {
 
       let string = "";
+
       if (!this.state.title) {
         string += "Please enter a title\r\n";
       }
+
       if (!this.state.snippet) {
         string += "Please enter a snippet\r\n";
       }
+
       this.setState({ errors: string });
     }
     else {
@@ -131,7 +120,7 @@ class HomePage extends React.Component {
           );
           this.setState({ snippet: "" });
           this.setState({ title: "" });
-          this.setState({ type: "" });
+          this.setState({ type: "javascript" });
           this.setState({ toggleShow: false });
         }
         else {

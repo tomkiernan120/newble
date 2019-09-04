@@ -179,11 +179,15 @@ button {
   color: #fff;
   border-radius: 6px;
   outline: 0;
+  @include transition(all 0.5s ease);
+  &:hover {
+    background-color:$darkblue;
+    border-color:#fff;
+    color:#fff;
+  }
   &.addtion {
     margin-top: 24px;
     margin-bottom: 45px;
-    @include transition(all 0.5s ease);
-
     border-color:#fff;
     overflow:hidden;
     color:#fff;
@@ -194,13 +198,9 @@ button {
   		position:absolute;
   		left:-135px;
 
-  		@include transform(rotateZ(45deg));
+  		@include transform( rotateZ( 45deg ) );
   	}
     &:hover {
-  		background-color:$darkblue;
-  		border-color:#fff;
-  		color:#fff;
-
   		.insider {
   			@include transition(all 0.3s ease);
   			left:135px;

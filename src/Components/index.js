@@ -7,5 +7,6 @@ import withAuthorization from './withAuthorization'
 import Modal from './Modal'
 import Snippet from './Snippet'
 import SnippetGrid from './SnippetGrid'
+import CodeMirrorPart from './CodeMirror'
 
-export { App, Navigation, AuthUserContext, SignOut, withAuthentication, withAuthorization, Modal, Snippet, SnippetGrid }
+export { App, Navigation, AuthUserContext, SignOut, withAuthentication, withAuthorization, Modal, Snippet, SnippetGrid, CodeMirrorPart }
