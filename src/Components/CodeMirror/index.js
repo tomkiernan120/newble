@@ -20,13 +20,16 @@ export default class CodeMirrorPart extends React.Component {
       }
 
 
-      console.log( props );
-
       this.options = { ...this.options, ...this.props.options };
+
+      console.log( this.options );
   }
 
   componentDidMount() {
-    CodeMirror( this.myRef.current, this.options );
+    this.codemirrorinstance = CodeMirror( this.myRef.current, this.options );
+    this.codemirrorinstance.on( "change", this.props.onChange );
+    this.codemirrorinstance.on( "refresh", this.props.onRefresh );
+
   }
 
   render() {
