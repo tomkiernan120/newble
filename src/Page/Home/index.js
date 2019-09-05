@@ -1,12 +1,14 @@
 import React from "react";
+import Helmet from 'react-helmet';
+import DayPicker, { DateUtils } from 'react-day-picker';
+import 'react-day-picker/lib/style.css';
+
 // import CodeMirror from 'react-codemirror';
 
-import "../../../node_modules/codemirror/lib/codemirror.css";
 import withAuthorization from "../../Components/withAuthorization";
 import { db, firebase } from "../../firebase";
-import "../../../node_modules/codemirror/lib/codemirror.css"
 
-import { Modal, SnippetGrid, CodeMirrorPart } from '../../Components';
+import { Modal, SnippetGrid } from '../../Components';
 
 require('codemirror/mode/javascript/javascript');
 require('codemirror/mode/xml/xml');
@@ -25,10 +27,15 @@ const INITIAL_STATE = {
   queryString: '',
   dateTime: '',
   types: ['javascript','xml','css','go','html', 'php','htmlmixed','sass'],
-  snippets: null
+  snippets: null,
+  from: undefined,
+  to: undefined,
 };
 
 class HomePage extends React.Component {
+  static defaultProps = {
+    numberOfMonths: 2,
+  };
   constructor(props) {
     super(props);
 
@@ -40,10 +47,21 @@ class HomePage extends React.Component {
     this.removeSnippet = this.removeSnippet.bind(this);
     this.snippetChange = this.snippetChange.bind(this);
     this.updateSnippets = this.updateSnippets.bind(this);
+    this.handleDayClick = this.handleDayClick.bind(this);
+    this.handleResetClick = this.handleResetClick.bind(this);
   }
 
   componentDidMount() {
     this.updateSnippets();
+  }
+
+  handleDayClick(day) {
+    const range = DateUtils.addDayToRange(day, this.state);
+    this.setState(range);
+  }
+
+  handleResetClick() {
+    this.setState(this.getInitialState());
   }
 
   updateSnippets() {
@@ -56,6 +74,17 @@ class HomePage extends React.Component {
       for( var key in items ){
         var item = items[key];
         var newItem = item;
+
+        if( this.state.queryString ) {
+          var itemstring = JSON.stringify( newItem );
+          if( itemstring.toLowerCase().indexOf( this.state.queryString.toLowerCase() ) > -1 ) {
+            newItem.show = true;
+          }
+          else {
+            newItem.show = false;
+          }
+        }
+
         newItems.push( newItem );
       }
 
@@ -135,7 +164,9 @@ class HomePage extends React.Component {
   }
 
   render() {
-    const { snippets } = this.state;
+    const { snippets, from, to } = this.state;
+
+    const modifiers = { start: from, end: to };
 
     return (
       <main>
@@ -168,11 +199,36 @@ class HomePage extends React.Component {
             </div>
             <div className="input">
               <label>DateTime</label>
-              <input type="text" name="datetime" placeholder="Datetime" onChange={this.handleChange} />
+              <DayPicker
+                className="Selectable"
+                numberOfMonths={this.props.numberOfMonths}
+                selectedDays={[from, { from, to }]}
+                modifiers={modifiers}
+                onDayClick={this.handleDayClick}
+              />
             </div>
+            <Helmet>
+              <style>{`
+              .Selectable .DayPicker-Day--selected:not(.DayPicker-Day--start):not(.DayPicker-Day--end):not(.DayPicker-Day--outside) {
+                background-color: #f0f8ff !important;
+                color: #4a90e2;
+              }
+              .Selectable .DayPicker-Day {
+                border-radius: 0 !important;
+              }
+              .Selectable .DayPicker-Day--start {
+                border-top-left-radius: 50% !important;
+                border-bottom-left-radius: 50% !important;
+              }
+              .Selectable .DayPicker-Day--end {
+                border-top-right-radius: 50% !important;
+                border-bottom-right-radius: 50% !important;
+              }
+            `}</style>
+          </Helmet>
           </div>
           <div className="snippet-container">
-            {snippets && <SnippetGrid snippets={snippets} /> }
+            {snippets && <SnippetGrid removeSnippet={this.removeSnippet} snippets={snippets} /> }
           </div>
         </div>
       </main>

@@ -26,7 +26,7 @@ const byPropKey = (propertyName, value) => () => ({
 class SignUpForm extends React.Component {
   constructor(props){
     super(props)
-    
+
     this.state = { ...INITIAL_STATE }
     this.onSubmit = this.onSubmit.bind(this)
   }
@@ -39,7 +39,7 @@ class SignUpForm extends React.Component {
     } = this.state
 
     if( !email || !passwordOne ){
-      this.setState({ error: { message: "Email or password cannot be blank" } }); 
+      this.setState({ error: { message: "Email or password cannot be blank" } });
     }
 
     const { history } = this.props
@@ -63,7 +63,7 @@ class SignUpForm extends React.Component {
       error,
     } = this.state;
 
-    const isInvalid = 
+    const isInvalid =
       passwordOne !== passwordTwo || passwordOne === '' || email === '' || username === ''
 
     return (

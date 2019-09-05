@@ -19,11 +19,13 @@ export default class CodeMirrorPart extends React.Component {
         readOnly: this.props.readOnly || false
       }
 
+
+      console.log( props );
+
       this.options = { ...this.options, ...this.props.options };
   }
 
   componentDidMount() {
-    console.log( this.options );
     CodeMirror( this.myRef.current, this.options );
   }
 
