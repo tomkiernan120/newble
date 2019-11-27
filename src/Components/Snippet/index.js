@@ -1,8 +1,10 @@
 import React from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
-// import CodeMirror from 'react-codemirror';
-import {UnControlled as CodeMirror} from 'react-codemirror2'
+import AceEditor from "react-ace";
+
+import 'brace/ext/language_tools';
+import 'brace/theme/github';
 
 export default class index extends React.Component {
   constructor(props) {
@@ -21,9 +23,7 @@ export default class index extends React.Component {
   }
 
   render() {
-
-    const options = {lineNumbers:true, tabSize:2, readOnly:true, smartIndent: true, mode: "javascript"};
-
+    console.log( this.props.snippet );
     return (
       <React.Fragment>
         <div key={this.props.index} className="snippet">
@@ -33,7 +33,17 @@ export default class index extends React.Component {
             </p>
             <p>{this.props.snippet.time}</p>
           </div>
-          <CodeMirror value={this.props.snippet.snippet} options={options} />
+          <AceEditor
+           placeholder="Code Here..."
+           theme="github"
+           value={this.props.snippet.snippet}
+           mode={this.props.snippet.type}
+           setOptions={{
+             enableBasicAutocompletion: true,
+             enableLiveAutocompletion: true,
+             tabSize: 2,
+           }}
+          />
           <CopyToClipboard onCopy={this.onCopy} text={this.props.snippet.snippet}>
             <button>
               <span className={this.state.copied ? "response show" : "response" }>Copied</span>

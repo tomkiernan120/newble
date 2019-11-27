@@ -28,7 +28,7 @@ class App extends Component {
       authUser
         ? this.setState({authUser})
         : this.setState({authUser: null});
-    })
+    });
   }
 
   render() {

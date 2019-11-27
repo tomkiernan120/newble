@@ -8,12 +8,24 @@ import "../../../node_modules/codemirror/lib/codemirror.css"
 
 import { Modal, SnippetGrid } from '../../Components';
 
-require('codemirror/mode/javascript/javascript');
-require('codemirror/mode/xml/xml');
-require('codemirror/mode/css/css');
-require('codemirror/mode/go/go');
-require('codemirror/mode/htmlmixed/htmlmixed');
-require('codemirror/mode/sass/sass');
+const languages = [
+  "javascript",
+  "java",
+  "python",
+  "xml",
+  "ruby",
+  "sass",
+  "markdown",
+  "mysql",
+  "json",
+  "html",
+  "handlebars",
+  "golang",
+  "csharp",
+  "elixir",
+  "typescript",
+  "css"
+];
 
 const INITIAL_STATE = {
   toggleShow: false,
@@ -24,7 +36,7 @@ const INITIAL_STATE = {
   order: '',
   queryString: '',
   dateTime: '',
-  types: ['javascript','xml','css','go','html', 'php','htmlmixed','sass'],
+  types: languages,
   snippets: null
 };
 
@@ -47,7 +59,6 @@ class HomePage extends React.Component {
   }
 
   updateSnippets() {
-    console.log( this.state );
     let currentUser = firebase.auth.currentUser.uid
     let snippetsRef = firebase.db.ref( `users/${currentUser}/snippets` );
 

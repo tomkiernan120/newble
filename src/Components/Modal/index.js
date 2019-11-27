@@ -1,6 +1,36 @@
 import React from 'react';
 
-import {UnControlled as CodeMirror} from 'react-codemirror2'
+import AceEditor from "react-ace";
+
+import 'brace/ext/language_tools';
+import 'brace/theme/github';
+
+import "ace-builds/src-noconflict/mode-jsx";
+const languages = [
+  "javascript",
+  "java",
+  "python",
+  "xml",
+  "ruby",
+  "sass",
+  "markdown",
+  "mysql",
+  "json",
+  "html",
+  "handlebars",
+  "golang",
+  "csharp",
+  "elixir",
+  "typescript",
+  "css"
+];
+
+languages.forEach(lang => {
+  require(`ace-builds/src-noconflict/mode-${lang}`);
+  require(`ace-builds/src-noconflict/snippets/${lang}`);
+});
+
+
 
 export default class Modal extends React.Component {
   render() {
@@ -38,7 +68,19 @@ export default class Modal extends React.Component {
               })}
             </select>
             <label>Snippet</label>
-            <CodeMirror options={options} style={{float:'left',width:'100%'}} onChange={this.props.snippetChange} name="snippet" value={this.props.snippet} id="modal-popup" />
+            <AceEditor
+              placeholder="Code Here..."
+              mode="javascript"
+              theme="github"
+              onChange={this.props.handleCodeChange}
+              name="UNIQUE_ID_OF_DIV"
+              editorProps={{ $blockScrolling: true }}
+              setOptions={{
+                enableBasicAutocompletion: true,
+                enableLiveAutocompletion: true,
+                tabSize: 2,
+              }}
+            />
             <button onClick={this.props.addSnippet}>Add Snippet</button>
           </div>
         </div>
