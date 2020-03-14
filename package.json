@@ -43,7 +43,7 @@
   "devDependencies": {
     "envify": "4.1.0",
     "eslint-plugin-import": "^2.18.2",
-    "now": "16.1.2",
+    "now": "17.0.4",
     "uglify-js": "3.4.9",
     "uglifyify": "^5.0.2"
   }
