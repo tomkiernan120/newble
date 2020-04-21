@@ -2,25 +2,27 @@ import firebase from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/database'
 
-const devConfig = {
-  apiKey: "AIzaSyB0hreq7bta_oDPV6qwqFrzNMh6U6W94CY",
-  authDomain: "newble.firebaseapp.com",
-  databaseURL: "https://newble.firebaseio.com",
-  projectId: "newble",
-  storageBucket: "",
-  messagingSenderId: "423886335226",
-  appId: "1:423886335226:web:86c98af7dae391ca"
-}
+  var devConfig = {
+    apiKey: "AIzaSyA9jjS5bTNbAeGpqumnWSW03Ll0kXSlEa4",
+    authDomain: "newble-84121.firebaseapp.com",
+    databaseURL: "https://newble-84121.firebaseio.com",
+    projectId: "newble-84121",
+    storageBucket: "newble-84121.appspot.com",
+    messagingSenderId: "392306673213",
+    appId: "1:392306673213:web:4aa9dc9fa38cc132fa0c54",
+    measurementId: "G-7MFYE7CCRX"
+  };
 
-const prodConfig = {
-  apiKey: "AIzaSyB0hreq7bta_oDPV6qwqFrzNMh6U6W94CY",
-  authDomain: "newble.firebaseapp.com",
-  databaseURL: "https://newble.firebaseio.com",
-  projectId: "newble",
-  storageBucket: "",
-  messagingSenderId: "423886335226",
-  appId: "1:423886335226:web:86c98af7dae391ca"
-}
+  var prodConfig = {
+    apiKey: "AIzaSyA9jjS5bTNbAeGpqumnWSW03Ll0kXSlEa4",
+    authDomain: "newble-84121.firebaseapp.com",
+    databaseURL: "https://newble-84121.firebaseio.com",
+    projectId: "newble-84121",
+    storageBucket: "newble-84121.appspot.com",
+    messagingSenderId: "392306673213",
+    appId: "1:392306673213:web:4aa9dc9fa38cc132fa0c54",
+    measurementId: "G-7MFYE7CCRX"
+  };
 
 const config = process.env.NODE_ENV === 'production'
   ? prodConfig
@@ -31,6 +33,7 @@ if (!firebase.apps.length) {
 }
 
 export const provider = new firebase.auth.GoogleAuthProvider();
+
 const db = firebase.database();
 const auth = firebase.auth();
 
