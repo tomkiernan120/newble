@@ -68,30 +68,40 @@ class SignUpForm extends React.Component {
 
     return (
       <form onSubmit={this.onSubmit}>
-        <input
-          value={username}
-          onChange={event => this.setState(byPropKey('username', event.target.value))}
-          type="text"
-          placeholder="Full Name"
-        />
-        <input
-          value={email}
-          onChange={event => this.setState(byPropKey('email', event.target.value))}
-          type="text"
-          placeholder="Email Address"
-        />
-        <input
-          value={passwordOne}
-          onChange={event => this.setState(byPropKey('passwordOne', event.target.value))}
-          type="password"
-          placeholder="Password"
-        />
-        <input
-          value={passwordTwo}
-          onChange={event => this.setState(byPropKey('passwordTwo', event.target.value))}
-          type="password"
-          placeholder="Confirm Password"
-        />
+        <div className="row halves">
+          <input
+            value={username}
+            onChange={event => this.setState(byPropKey('username', event.target.value))}
+            type="text"
+            placeholder="Full Name"
+          />
+          <input
+            value={email}
+            onChange={event => this.setState(byPropKey('email', event.target.value))}
+            type="text"
+            placeholder="Email Address"
+          />
+        </div>
+        <div className="row halves">
+          <input
+            value={passwordOne}
+            onChange={event => this.setState(byPropKey('passwordOne', event.target.value))}
+            type="password"
+            placeholder="Password"
+          />
+          <input
+            value={passwordTwo}
+            onChange={event => this.setState(byPropKey('passwordTwo', event.target.value))}
+            type="password"
+            placeholder="Confirm Password"
+          />
+        </div>
+        <div className="row">
+          <label>
+            <input type="checkbox" value="accept" />
+             Accept the terms and conditions
+          </label>
+        </div>
         <button disabled={isInvalid} type="submit">
           Sign Up
         </button>

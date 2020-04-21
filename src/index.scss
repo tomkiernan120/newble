@@ -163,6 +163,11 @@ textarea {
   border: 1px solid rgba(0, 0, 0, 0.5);
 }
 
+input {
+  display: inline;
+  width: 2rem;
+}
+
 textarea {
   resize: vertical;
   min-height: 120px;
@@ -226,7 +231,14 @@ button {
   }
 }
 
+.row.halves{
+  display: flex;
+  justify-content: space-between;
 
+  input{
+    width:49%;
+  }
+}
 
 .signin {
   position: absolute;
