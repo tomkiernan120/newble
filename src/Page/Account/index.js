@@ -22,6 +22,7 @@ export default class Account extends React.Component {
     this.setState({ success: false })
     firebase.auth.onAuthStateChanged( user => {
       if( user ){
+         console.log( user );
         if( user.displayName ){
           this.setState( {name: user.displayName });
         }      
@@ -76,12 +77,11 @@ export default class Account extends React.Component {
             <h1>Update Account</h1>
             {success && <p>Your updates have been saved</p> }
             {errors && <p>{errors.message}</p>}
-            <label>Name</label>
-            <input type="text" name="name" value={this.state.name} onChange={this.handleChange} />
-            <label>Email</label>
-            <input type="email" name="email" value={this.state.email} onChange={this.handleChange} />            
-            <label>Password</label>
-            <input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
+            <div className="row halves">
+              <input type="text" name="name" value={this.state.name} onChange={this.handleChange} />
+              <input type="email" name="email" value={this.state.email} onChange={this.handleChange} />            
+            </div>
+            <input type="password" name="password" placeholder="Password" onChange={this.handleChange} />
             <button type='submit'>Save Changes</button>
           </form>
         </div>

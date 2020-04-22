@@ -163,7 +163,7 @@ textarea {
   border: 1px solid rgba(0, 0, 0, 0.5);
 }
 
-input {
+input[type="checkbox"] {
   display: inline;
   width: 2rem;
 }
@@ -288,9 +288,10 @@ button {
     position: fixed;
     width: 40%;
     height: auto;
+    max-height: 95%;
     background: #fff;
     box-sizing: border-box;
-    padding: 2%;
+    padding: 1rem;
     border-radius: 6px;
     top: 50%;
     left: 50%;

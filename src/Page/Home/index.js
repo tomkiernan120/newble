@@ -109,15 +109,18 @@ class HomePage extends React.Component {
   }
 
   snippetChange(editor, data, value){
+    console.log( arguments ); 
     this.setState({ snippet: value })
   }
 
   handleChange(e) {
+    console.log( arguments );
     e.preventDefault();
     this.setState({ [e.target.name]: e.target.value }, this.updateSnippets );
   }
 
   addSnippet(e) {
+    console.log( this.state );
     if ( !this.state.snippet && !this.state.title ) {
 
       let string = "";

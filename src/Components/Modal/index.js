@@ -6,6 +6,7 @@ import 'brace/ext/language_tools';
 import 'brace/theme/github';
 
 import "ace-builds/src-noconflict/mode-jsx";
+
 const languages = [
   "javascript",
   "java",
@@ -72,7 +73,7 @@ export default class Modal extends React.Component {
               placeholder="Code Here..."
               mode="javascript"
               theme="github"
-              onChange={this.props.handleCodeChange}
+              onChange={this.props.handleChange}
               name="UNIQUE_ID_OF_DIV"
               editorProps={{ $blockScrolling: true }}
               setOptions={{
