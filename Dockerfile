@@ -2,18 +2,13 @@
 FROM mhart/alpine-node:10
 
 # Set the working directory
-WORKDIR /usr/src
+WORKDIR /app
 
 # Copy package manager files to the working directory and run install
-COPY package.json yarn.lock ./
-RUN yarn install
+COPY package.json ./
+RUN npm install
 
 # Copy all files to the working directory
 COPY . .
 
-# Run tests
-RUN CI=true yarn test
-
-# Build the app and move the resulting build to the `/public` directory
-RUN yarn build
-RUN mv ./build /public
+CMD [ "npm", "run", "start" ]

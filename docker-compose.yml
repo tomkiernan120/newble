@@ -6,9 +6,26 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - '.:/usr/src/app'
-      - '/usr/src/app/node_modules'
+      - '.:/app'
+      - '/app/node_modules'
     ports:
       - '3000:3000'
+    labels:
+      - traefik.enable=true
+      - traefik.backend=newble # Name of your application
+      - traefik.http.routers.newble.rule=Host(`newble.example.localhost`)
+      # Allow request only from the predefined entry point named "web"
+      - "traefik.http.routers.newble.entrypoints=web"
+      - "traefik.docker.network=traefik_proxy"
     environment:
       - NODE_ENV=development
+    networks:
+      - traefik_proxy
+      - default
+
+networks:
+  traefik_proxy:
+    external:
+      name: traefik_proxy
+  default:
+    driver: bridge
