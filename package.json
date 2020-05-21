@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@firebase/app-types": "0.4.3",
+    "@firebase/app-types": "0.6.1",
     "codemirror": "5.48.4",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-markdown": "^1.0.2",
