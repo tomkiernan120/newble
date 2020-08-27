@@ -6,11 +6,10 @@ import PropTypes from 'prop-types';
 import AceEditor from "react-ace";
 
 import moment from 'moment';
+import 'moment/locale/en-gb';
 
 import 'brace/ext/language_tools';
 import 'brace/theme/github';
-
-import { Snippet } from "..";
 
 class index extends React.Component {
   constructor(props) {
