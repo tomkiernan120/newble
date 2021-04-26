@@ -16,7 +16,7 @@
     "react-ace-editor": "0.0.3",
     "react-codemirror2": "6.0.0",
     "react-copy-to-clipboard": "5.0.1",
-    "react-datepicker": "2.8.0",
+    "react-datepicker": "3.8.0",
     "react-dom": "16.10.2",
     "react-helmet": "5.2.1",
     "react-particles-js": "2.4.2",
