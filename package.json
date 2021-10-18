@@ -6,7 +6,7 @@
     "@firebase/app-types": "0.4.3",
     "codemirror": "5.48.4",
     "eslint-config-airbnb-base": "^14.1.0",
-    "eslint-plugin-markdown": "^1.0.2",
+    "eslint-plugin-markdown": "2.2.1",
     "firebase": "^7.14.2",
     "moment": "^2.25.1",
     "node-sass": "^4.14.0",
