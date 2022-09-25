@@ -5,14 +5,14 @@
   "dependencies": {
     "@firebase/app-types": "0.4.3",
     "codemirror": "5.48.4",
-    "eslint-config-airbnb-base": "^14.1.0",
-    "eslint-plugin-markdown": "^1.0.2",
-    "firebase": "^7.14.2",
-    "moment": "^2.25.1",
-    "node-sass": "^4.14.0",
+    "eslint-config-airbnb-base": "14.2.1",
+    "eslint-plugin-markdown": "1.0.2",
+    "firebase": "7.24.0",
+    "moment": "2.29.4",
+    "node-sass": "4.14.1",
     "normalize.css": "8.0.1",
     "react": "16.10.2",
-    "react-ace": "^8.1.0",
+    "react-ace": "8.1.0",
     "react-ace-editor": "0.0.3",
     "react-codemirror2": "6.0.0",
     "react-copy-to-clipboard": "5.0.1",
@@ -21,7 +21,7 @@
     "react-helmet": "5.2.1",
     "react-particles-js": "2.4.2",
     "react-router-dom": "5.0.1",
-    "react-scripts": "^3.4.1",
+    "react-scripts": "3.4.4",
     "react-tooltip": "3.10.0",
     "uuid": "3.3.2"
   },
@@ -43,9 +43,9 @@
   ],
   "devDependencies": {
     "envify": "4.1.0",
-    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-import": "2.26.0",
     "now": "16.1.2",
     "uglify-js": "3.4.9",
-    "uglifyify": "^5.0.2"
+    "uglifyify": "5.0.2"
   }
 }
