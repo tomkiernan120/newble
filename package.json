@@ -7,7 +7,7 @@
     "codemirror": "5.48.4",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-markdown": "^1.0.2",
-    "firebase": "^7.14.2",
+    "firebase": "^10.9.0",
     "moment": "^2.25.1",
     "node-sass": "^4.14.0",
     "normalize.css": "8.0.1",
